@@ -12,7 +12,10 @@
 <body <?php body_class(); ?>>
 
 <header id="site-header">
-
+<ul>
+    <li>Home</li>
+    <li>About</li>
+</ul>
 </header>
 
 <main>
