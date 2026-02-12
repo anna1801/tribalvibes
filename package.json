@@ -1,0 +1,26 @@
+{
+  "name": "tribalvibes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:js": "npx esbuild assets/src/main.js --bundle --minify --outfile=assets/js/main.min.js --watch",
+    "build:js": "npx esbuild assets/src/main.js --bundle --minify --outfile=assets/js/main.min.js"
+  },
+  "repository": { 
+    "type": "git",
+    "url": "git+https://github.com/anna1801/tribalvibes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anna1801/tribalvibes/issues"
+  },
+  "homepage": "https://github.com/anna1801/tribalvibes#readme",
+  "devDependencies": {
+    "esbuild": "^0.25.10",
+    "sass": "^1.80.0",
+    "terser": "^5.44.0"
+  }
+}

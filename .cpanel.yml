@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/equipage/public_html/tribalvibes/wp-content/themes/tribalvibes
+    - /bin/cp -R * $DEPLOYPATH
