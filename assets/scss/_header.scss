@@ -1,0 +1,19 @@
+.header-main-area {
+    .menu-item {
+        .megamenu {
+            justify-content: center;
+            .menu-item { 
+                &:not(.menu-item-has-children) { 
+                    a {
+                        span {
+                            &::after,
+                            &::before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

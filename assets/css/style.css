@@ -62,6 +62,16 @@
   }
 }
 
+.header-main-area .menu-item .megamenu {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-main-area .menu-item .megamenu .menu-item:not(.menu-item-has-children) a span::after, .header-main-area .menu-item .megamenu .menu-item:not(.menu-item-has-children) a span::before {
+  display: none;
+}
+
 :root {
   --e-global-color-primary: #FFFFFF;
   --e-global-color-secondary: #29282B;

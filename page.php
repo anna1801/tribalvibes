@@ -17,6 +17,6 @@
        // endif; 
     ?>
 
-    <?php// get_template_part('template/cta_consultation'); ?>
+    <!-- <?php /*get_template_part('template/cta_consultation');*/ ?> -->
 
 <?php get_footer(); ?>

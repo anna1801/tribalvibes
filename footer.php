@@ -1,10 +1,9 @@
     </main>
-    <!-- Scroll to top start -->
+
     <div class="scroll-top not-visible">
         <i class="fa fa-angle-up"></i>
     </div>
-    <!-- Scroll to Top End -->
-    <!-- footer area start -->
+
     <footer class="footer-widget-area">
         <div class="footer-top section-padding">
             <div class="container">
@@ -13,25 +12,49 @@
                         <div class="widget-item">
                             <div class="widget-title">
                                 <div class="widget-logo">
-                                    <a href="index.html">
-                                        <img src="assets/img/logo/logo.png" alt="Tribal Vibes">
+                                    <a href="<?php echo site_url(); ?>">
+                                        <?php
+                                            $logo = get_field('logo', 'options');
+                                            if($logo) :
+                                                echo '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'">';
+                                            endif;
+                                        ?>
                                     </a>
                                 </div>
                             </div>
-                            <div class="widget-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                            </div>
+                            <?php 
+                                $footer_about = get_field('footer_about', 'options');
+                                if($footer_about) :
+                                    echo '<div class="widget-body">'.$footer_about.'</div>';
+                                endif;
+                            ?>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="widget-item">
-                            <h6 class="widget-title">Contact Us</h6>
+                            <?php
+                                $footer_contact_label = get_field('footer_contact_label', 'options');
+                                if($footer_contact_label) :
+                                    echo '<h6 class="widget-title">'.$footer_contact_label.'</h6>';
+                                endif;
+                            ?>
                             <div class="widget-body">
                                 <address class="contact-block">
                                     <ul>
-                                        <li><i class="pe-7s-home"></i> Sulthan Bathery, Moolankave, Wayanad, Kerala - 673592</li>
-                                        <li><i class="pe-7s-mail"></i> <a href="mailto:info@tribalvibes.shop">info@tribalvibes.shop </a></li>
-                                        <li><i class="pe-7s-call"></i> <a href="tel:+91 7219 111 073">+91 7219 111 073</a></li>
+                                        <?php 
+                                            $address = get_field('address', 'options');
+                                            $email = get_field('email', 'options');
+                                            $phone = get_field('phone', 'options');
+                                            if($address):
+                                                echo '<li><i class="pe-7s-home"></i> '.$address.'</li>';
+                                            endif;
+                                            if($email) :
+                                                echo '<li><i class="pe-7s-mail"></i> <a href="mailto:'.$email.'">'.$email.' </a></li>';
+                                            endif;
+                                            if($phone) :
+                                                echo '<li><i class="pe-7s-call"></i> <a href="tel:'.$phone.'">'.$phone.'</a></li>';
+                                            endif;
+                                        ?>
                                     </ul>
                                 </address>
                             </div>
@@ -39,34 +62,48 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="widget-item">
-                            <h6 class="widget-title">Policy</h6>
+                            <?php
+                                $footer_menu_label = get_field('footer_menu_label', 'options');
+                                if($footer_menu_label) :
+                                    echo '<h6 class="widget-title">'.$footer_menu_label.'</h6>';
+                                endif;
+                            ?>
                             <div class="widget-body">
-                                <ul class="info-list">
-                                    <li><a href="payment-policy.html">Payment Policy</a></li>
-                                    <li><a href="shipping-delivery-policy.html">Shipping & Delivery</a></li>
-                                    <li><a href="disclaimer.html">Disclaimer</a></li>
-                                    <li><a href="return-exchange-policy.html">Return & Exchange</a></li>
-                                    <li><a href="lifetime-warranty-policy.html">Lifetime Warranty</a></li>
-                                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                    <li><a href="privacy-policy.html">Privacy policy</a></li>
-                                    <li><a href="grievance-redressal-policy.html">Grievance Redressal</a></li>
-                                </ul>
+                                <?php
+                                    wp_nav_menu(array(
+                                        'theme_location' => 'footer-menu',
+                                        'container' => false,
+                                        'menu_class' => 'info-list',
+                                    ));
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="widget-item">
-                            <h6 class="widget-title">Follow Us</h6>
-                            <div class="widget-body social-link">
-                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/tribalvibes_by_shubhangi/" target="_blank"><i class="fa fa-instagram"></i></a>
-                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                                <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                            <div class="footer-payment mt-20">
-                                <img src="assets/img/payment.png" alt="payment method">
-                            </div>
+                            <?php 
+                                $footer_social_label = get_field('footer_social_label', 'options');
+                                if($footer_social_label) :
+                                    echo '<h6 class="widget-title">'.$footer_social_label.'</h6>';
+                                endif;
+
+                                if( have_rows('social_links', 'options') ): 
+                                    echo '<div class="widget-body social-link">';
+                                        while( have_rows('social_links', 'options') ): the_row(); 
+                                            $social_icon = get_sub_field('social_icon');
+                                            $social_url = get_sub_field('social_url');
+                                            if($social_url) :
+                                                echo '<a href="'.$social_url.'" target="_blank"><i class="fa fa-'.$social_icon.'"></i></a>';
+                                            endif;
+                                        endwhile;
+                                    echo '</div>';
+                                endif; 
+                                
+                                $footer_payment = get_field('footer_payment', 'options');
+                                if($footer_payment) :
+                                    echo '<div class="footer-payment mt-20"><img src="'.$footer_payment['url'].'" alt="'.$footer_payment['alt'].'"> </div>';
+                                endif;
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -76,9 +113,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="copyright-text text-center">
-                            <p>Copyright &copy; 2025. Tribal Vibes By Shubhangi. All Right Reserved. Developed by <a href="https://www.effileap.com" target="_blank">Effileap Technologies</a></p>
-                        </div>
+                        <?php
+                            $footer_copyright = get_field('footer_copyright', 'options');
+                            if($footer_copyright) :
+                                echo '<div class="copyright-text text-center">'.$footer_copyright.'</div>';
+                            endif;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -87,11 +127,7 @@
 
 
 
-
-
-
-    
-    <!-- footer area end -->
+    <!-- to do 5 -->
     <!-- Quick view modal start -->
     <div class="modal" id="quick_view">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -270,7 +306,7 @@
         </div>
     </div>
     <!-- offcanvas mini cart end -->
-
+    <!-- to do 5 end -->
 
 
 <?php wp_footer(); ?>
