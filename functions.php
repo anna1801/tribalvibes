@@ -85,10 +85,11 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // custom functions
     require get_template_directory() . '/includes/custom.php';
     require get_template_directory() . '/includes/image-sizes.php';
+    require get_template_directory() . '/template/product-layout.php';
 // custom functions end
 
 // CPT
-    require get_template_directory() . '/includes/cpt/career.php';
+    require get_template_directory() . '/includes/cpt/testimonials.php';
 // CPT end
 
 // Remove editor for 'Page' and 'Expertises' custom post type
