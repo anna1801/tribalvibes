@@ -226,11 +226,15 @@
                                                         <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" data-bs-placement="left" title="Quick View"><i class="pe-7s-search"></i></span></a>
                                                     </div>
                                                     to do end-->
-                                                    <!-- to do -->
                                                     <div class="cart-hover">
-                                                        <button class="btn btn-cart">add to cart</button>
+                                                        <a href="<?php echo esc_url($product->add_to_cart_url()); ?>"
+                                                        data-quantity="1"
+                                                        class="btn btn-cart add_to_cart_button ajax_add_to_cart"
+                                                        data-product_id="<?php echo esc_attr($product->get_id()); ?>"
+                                                        data-product_sku="<?php echo esc_attr($product->get_sku()); ?>">
+                                                            <?php echo esc_html($product->add_to_cart_text()); ?>
+                                                        </a>
                                                     </div>
-                                                    <!-- to do end-->
                                                 </figure>
                                                 <div class="product-caption">
                                                     <h6 class="product-name">

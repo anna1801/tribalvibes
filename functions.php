@@ -95,11 +95,11 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // CPT end
 
 // Remove editor for 'Page' and 'Expertises' custom post type
-  function remove_editor_for_event_cpt() {
-    remove_post_type_support( 'expertises', 'editor' );
-    remove_post_type_support( 'page', 'editor' );
-  }
-  add_action( 'init', 'remove_editor_for_event_cpt' );
+  // function remove_editor_for_event_cpt() {
+  //   remove_post_type_support( 'expertises', 'editor' );
+  //   remove_post_type_support( 'page', 'editor' );
+  // }
+  // add_action( 'init', 'remove_editor_for_event_cpt' );
 // end
 
 // Submenu wrapper 
@@ -131,6 +131,5 @@ function mytheme_add_woocommerce_support() {
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 // end
-
 
 ?>

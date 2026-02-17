@@ -83,6 +83,13 @@
             }
         }
     }
+    .cart-hover {
+        .added_to_cart{
+            &.wc-forward {
+                display: none;
+            }
+        }
+    }
 }
 .product-area,
 .feature-product {
@@ -94,3 +101,7 @@
         }
     }    
 }
+
+
+
+

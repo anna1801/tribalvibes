@@ -72,6 +72,10 @@
   content: "";
 }
 
+.product-item .cart-hover .added_to_cart.wc-forward {
+  display: none;
+}
+
 .product-area .product-item .product-caption .product-identity,
 .feature-product .product-item .product-caption .product-identity {
   display: none;
