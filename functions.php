@@ -85,7 +85,9 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 // custom functions
     require get_template_directory() . '/includes/custom.php';
     require get_template_directory() . '/includes/image-sizes.php';
-    require get_template_directory() . '/template/product-layout.php';
+    require get_template_directory() . '/template/product-grid-layout.php';
+    require get_template_directory() . '/template/product-list-layout.php';  
+    require get_template_directory() . '/includes/ajax/product-list.php';
 // custom functions end
 
 // CPT
@@ -123,6 +125,12 @@ class Custom_Submenu_Walker extends Walker_Nav_Menu {
 }
 // end
 
+// Support woocommerce
+function mytheme_add_woocommerce_support() {
+  add_theme_support('woocommerce');
+}
+add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+// end
 
 
 ?>

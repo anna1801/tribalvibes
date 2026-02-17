@@ -4,11 +4,10 @@
     if ($product) :
         $title = get_the_title();
         $link = get_the_permalink();
-        
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
         ?>
-        <div class="product-item">
+        <div class="product-list-item">
             <figure class="product-thumb">
                 <a href="<?php echo $link; ?>">
                     <?php
@@ -51,8 +50,8 @@
                 </div>
                 <!-- to do 
                 <div class="button-group">
-                    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="pe-7s-like"></i></a>
-                    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>
+                    <a href="wishlist.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="pe-7s-like"></i></a>
+                    <a href="compare.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" data-bs-placement="left" title="Quick View"><i class="pe-7s-search"></i></span></a>
                 </div>
                 to do end -->
@@ -62,10 +61,23 @@
                 </div>
                 <!-- to do end-->
             </figure>
-            <div class="product-caption text-center">
-                <h6 class="product-name">
-                    <a href="<?php echo $link; ?>"><?php echo $title; ?></a>
-                </h6>
+            <div class="product-content-list">
+                <?php 
+                    $categories = wp_get_post_terms( $id, 'product_cat' );
+                    if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
+                        echo '<ul class="product-identity">';
+                        foreach ( $categories as $category ) {
+                            if ( $category->parent == 0 ) {
+                                $category_link = get_term_link( $category );
+                                echo '<li class="manufacturer-name">
+                                        <a href="' . esc_url( $category_link ) . '">' . esc_html( $category->name ) . '</a>
+                                    </li>';
+                            }
+                        }
+                        echo '</ul>';
+                    }
+                ?>
+                <h5 class="product-name"><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h5>
                 <div class="price-box">
                     <?php
                         if ($product->is_on_sale()) :
@@ -76,6 +88,12 @@
                         endif;
                     ?>
                 </div>
+                <?php
+                    $description = $product->get_description();
+                    if ( ! empty( $description ) ) {
+                        echo '<p>' . wp_trim_words( wp_strip_all_tags( $description ), 45, '...' ) . '</p>';
+                    }
+                ?>
             </div>
         </div>
         <?php 

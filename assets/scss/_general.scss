@@ -61,3 +61,36 @@
         }
     }
 }
+.product-item {
+    .product-caption {
+        .product-identity {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                &::after {
+                    content: ",";
+                    margin-right: 6px;
+                }
+                &:last-child {
+                    &::after {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}
+.product-area,
+.feature-product {
+    .product-item {
+        .product-caption {
+            .product-identity {
+                display: none;
+            }
+        }
+    }    
+}

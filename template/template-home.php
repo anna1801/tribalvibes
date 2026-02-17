@@ -332,7 +332,7 @@
                                                     $products = new WP_Query($args);
                                                     if ($products->have_posts()) : 
                                                         while ($products->have_posts()) : $products->the_post(); 
-                                                            get_template_part('template/product-layout');
+                                                            get_template_part('template/product-grid-layout');
                                                         endwhile;
                                                         wp_reset_postdata();
                                                     endif; 
@@ -434,7 +434,7 @@
                                 $products = new WP_Query($args);
                                 if ($products->have_posts()) : 
                                     while ($products->have_posts()) : $products->the_post(); 
-                                        get_template_part('template/product-layout');
+                                        get_template_part('template/product-grid-layout');
                                     endwhile;
                                     wp_reset_postdata();
                                 endif; 
