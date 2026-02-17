@@ -101,4 +101,35 @@ class Tribal_Mobile_Menu_Walker extends Walker_Nav_Menu {
     }
 }
 
+// Store Selected Attributes in Cart
+add_filter( 'woocommerce_add_cart_item_data', 'add_custom_attributes_to_cart_item', 10, 3 );
+function add_custom_attributes_to_cart_item( $cart_item_data, $product_id, $variation_id ) {
+
+    $product = wc_get_product( $product_id );
+    $attributes = $product->get_attributes();
+
+    foreach ( $attributes as $attribute_name => $attribute ) {
+        if ( isset( $_POST[ 'attribute_' . $attribute_name ] ) ) {
+            $cart_item_data[ 'attribute_' . $attribute_name ] = sanitize_text_field( $_POST[ 'attribute_' . $attribute_name ] );
+        }
+    }
+
+    return $cart_item_data;
+}
+
+// Show Attributes in Cart
+add_filter( 'woocommerce_get_item_data', 'display_custom_attributes_cart', 10, 2 );
+function display_custom_attributes_cart( $item_data, $cart_item ) {
+    foreach ( $cart_item as $key => $value ) {
+        if ( strpos( $key, 'attribute_' ) === 0 ) {
+            $name = str_replace( 'attribute_', '', $key );
+            $item_data[] = array(
+                'key'   => wc_attribute_label( $name ),
+                'value' => $value,
+            );
+        }
+    }
+    return $item_data;
+}
+
 ?>

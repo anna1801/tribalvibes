@@ -92,7 +92,8 @@
     }
 }
 .product-area,
-.feature-product {
+.feature-product,
+.related-products {
     .product-item {
         .product-caption {
             .product-identity {
@@ -101,7 +102,12 @@
         }
     }    
 }
-
-
-
-
+.product-details-des {
+    .availability {
+        i {
+            &.fa-times-circle-o {
+                color: red;
+            }
+        }
+    }
+} 

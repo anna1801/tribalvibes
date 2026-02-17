@@ -27,7 +27,26 @@
                                         }
                                     }
                                 } elseif ( is_singular('product') ) {
-                                    echo 'This is a Single Product Page';
+                                    echo '<li class="breadcrumb-item">Categories</li>';
+                                    $terms = get_the_terms( $post->ID, 'product_cat' );
+                                    if ( $terms && ! is_wp_error( $terms ) ) {
+                                        $main_term = null;
+                                        foreach ( $terms as $term ) {
+                                            if ( $term->parent != 0 ) {
+                                                $main_term = $term;
+                                                break;
+                                            }
+                                        }
+                                        if ( ! $main_term ) {
+                                            $main_term = $terms[0];
+                                        }
+                                        if ( $main_term->parent ) {
+                                            $parent_term = get_term( $main_term->parent, 'product_cat' );
+                                            echo '<li class="breadcrumb-item"><a href="' . get_term_link( $parent_term ) . '">' . esc_html( $parent_term->name ) . '</a></li>';
+                                        }
+                                        echo '<li class="breadcrumb-item"><a href="' . get_term_link( $main_term ) . '">' . esc_html( $main_term->name ) . '</a></li>';
+                                        echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';                                        
+                                    }
                                 } elseif ( is_page() ) {
                                     echo 'This is a Single Page';
                                 } else {

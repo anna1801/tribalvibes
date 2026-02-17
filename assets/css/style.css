@@ -77,6 +77,11 @@
 }
 
 .product-area .product-item .product-caption .product-identity,
-.feature-product .product-item .product-caption .product-identity {
+.feature-product .product-item .product-caption .product-identity,
+.related-products .product-item .product-caption .product-identity {
   display: none;
+}
+
+.product-details-des .availability i.fa-times-circle-o {
+  color: red;
 }

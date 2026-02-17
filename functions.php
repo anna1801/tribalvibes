@@ -88,10 +88,11 @@ add_filter('wpcf7_autop_or_not', '__return_false');
     require get_template_directory() . '/template/product-grid-layout.php';
     require get_template_directory() . '/template/product-list-layout.php';  
     require get_template_directory() . '/includes/ajax/product-list.php';
+    require get_template_directory() . '/includes/ajax/add_to_cart.php';
 // custom functions end
 
 // CPT
-    require get_template_directory() . '/includes/cpt/testimonials.php';
+    require get_template_directory() . '/includes/cpt/testimonials.php'; 
 // CPT end
 
 // Remove editor for 'Page' and 'Expertises' custom post type
