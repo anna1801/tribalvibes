@@ -132,4 +132,22 @@ function display_custom_attributes_cart( $item_data, $cart_item ) {
     return $item_data;
 }
 
+// Change “Shipment 1” to Custom Text (Recommended) in cart page 
+add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name', 10, 3 );
+function custom_shipping_package_name( $package_name, $i, $package ) {
+    return 'Shipping'; // change this to anything you want
+}
+
+// Wrap WooCommerce message content in a container
+add_filter( 'woocommerce_add_message', function( $message ) {
+    return '<div class="container">' . $message . '</div>';
+} );
+add_filter( 'woocommerce_add_error', function( $message ) {
+    return '<div class="container">' . $message . '</div>';
+} );
+add_filter( 'woocommerce_add_notice', function( $message ) {
+    return '<div class="container">' . $message . '</div>';
+} );
+
+
 ?>

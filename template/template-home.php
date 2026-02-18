@@ -198,7 +198,7 @@
                                             ?>
                                             <div class="hot-deals-item product-item">
                                                 <figure class="product-thumb">
-                                                    <a href="#">
+                                                    <a href="<?php echo $link; ?>">
                                                         <?php
                                                             if (has_post_thumbnail()) {
                                                                 $image_url = get_the_post_thumbnail_url($id, 'full');

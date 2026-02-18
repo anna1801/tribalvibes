@@ -111,3 +111,104 @@
         }
     }
 } 
+.cart-table {
+    .table {
+        thead {
+            tr {
+                th {
+                    color: #5a5b2f;
+                    border: 1px solid #ccc;
+                }
+            } 
+        } 
+    } 
+} 
+.cart-table {
+    .table {
+        tbody {
+            tr {
+                td {
+                    border: 1px solid #ccc;
+                }
+            } 
+        } 
+    } 
+} 
+
+.cart-update-option {
+    .apply-coupon-wrapper {
+        .form {
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            input {
+                border: 1px solid #dadada;
+                font-size: 14px;
+                padding: 9px 10px;
+                outline: none;
+                margin-right: 15px;
+                width: 100%;
+                -webkit-transition: 0.4s;
+                -o-transition: 0.4s;
+                transition: 0.4s;
+            }
+        }
+    }
+}
+
+.cart-calculator-wrapper {
+    .cart-calculate-items {
+        .table {
+            tr {
+                th {
+                    padding: 15px 20px;
+                    font-weight: 500;
+                    color: #1a4247;
+                }
+            } 
+        } 
+    }
+} 
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+    outline: none;
+    &::before {
+        display: none;
+    }
+    .container {
+        position: relative;
+        &::before {
+            font-family: WooCommerce;
+            content: "\e028";
+            content: "\e028" / "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+.woocommerce-message {
+    .container {
+        &::before {
+            content: "\e015";
+            color: #8fae1b;
+        }
+    }
+}
+.woocommerce-info {
+    .container {
+        &::before {
+            color: #1e85be;
+        }
+    }
+}
+.woocommerce-error {
+    .container {
+        &::before {
+            content: "\e016";
+            color: #b81c23;
+        }
+    }
+}
