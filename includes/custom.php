@@ -149,5 +149,19 @@ add_filter( 'woocommerce_add_notice', function( $message ) {
     return '<div class="container">' . $message . '</div>';
 } );
 
-
+// save password while account create in checkout page
+add_action( 'woocommerce_checkout_order_processed', 'set_custom_password_after_checkout', 10, 1 );
+function set_custom_password_after_checkout( $order_id ) {
+    $order = wc_get_order( $order_id );
+    $user_id = $order->get_user_id();
+    if ( $user_id && ! empty( $_POST['createaccount'] ) && ! empty( $_POST['account_password'] ) ) {
+        $password = sanitize_text_field( $_POST['account_password'] );
+        wp_set_password( $password, $user_id );
+        $user = get_user_by( 'id', $user_id );
+        if ( $user ) {
+            wp_set_current_user( $user_id, $user->user_login );
+            wp_set_auth_cookie( $user_id );
+        }
+    }
+}
 ?>

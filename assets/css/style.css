@@ -174,3 +174,48 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+.woocommerce form.login,
+.woocommerce form.checkout_coupon,
+.woocommerce form.register {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.billing-form-wrap .single-input-item textarea,
+.billing-form-wrap .single-input-item input {
+  color: #1a4247 !important;
+  border: 1px solid #dadada !important;
+  padding: 12px 10px !important;
+  width: 100% !important;
+  background: #f7f7f7 !important;
+  border-radius: 0 !important;
+  line-height: 24px !important;
+}
+
+.billing-form-wrap .single-input-item textarea:focus,
+.billing-form-wrap .single-input-item input:focus {
+  border-color: #5a5b2f !important;
+  background-color: #fff !important;
+}
+
+.billing-form-wrap .single-input-item .form-row {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.billing-form-wrap .single-input-item .nice-select .current {
+  padding-top: 6px;
+  display: block;
+}
+
+.billing-form-wrap .woocommerce-account-fields {
+  display: none;
+}
+
+.order-summary-details .order-summary-content .woocommerce-shipping-totals .woocommerce-shipping-destination {
+  display: none;
+}

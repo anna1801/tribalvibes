@@ -523,7 +523,7 @@
 	
 
     // Payment Method Accordion
-    $('input[name="paymentmethod"]').on('click', function () {
+    $('input[name="payment_method"]').on('change', function () { // replaced paymentmethod to payment_method and click to change
         var $value = $(this).attr('value');
         $('.payment-method-details').slideUp();
         $('[data-method="' + $value + '"]').slideDown();
