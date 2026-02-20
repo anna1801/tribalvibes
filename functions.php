@@ -48,31 +48,31 @@ add_action( 'after_setup_theme', 'theme_setup' );
 function theme_scripts() {
   // css
     wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-    wp_enqueue_style('bootstrap-css',get_template_directory_uri() . '/theme/assets/css/vendor/bootstrap.min.css');
-    wp_enqueue_style('pe-icon-7-stroke-css',get_template_directory_uri() . '/theme/assets/css/vendor/pe-icon-7-stroke.css');
-    wp_enqueue_style('font-awesome-css',get_template_directory_uri() . '/theme/assets/css/vendor/font-awesome.min.css');
-    wp_enqueue_style('slick-css',get_template_directory_uri() . '/theme/assets/css/plugins/slick.min.css');
-    wp_enqueue_style('animate-css',get_template_directory_uri() . '/theme/assets/css/plugins/animate.css');
-    wp_enqueue_style('nice-select-css',get_template_directory_uri() . '/theme/assets/css/plugins/nice-select.css');
-    wp_enqueue_style('jqueryui-css',get_template_directory_uri() . '/theme/assets/css/plugins/jqueryui.min.css');
-    wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/theme/assets/css/style.css', array(), '1.0' );
+    wp_enqueue_style('bootstrap-css',get_template_directory_uri() . '/theme_assets/css/vendor/bootstrap.min.css');
+    wp_enqueue_style('pe-icon-7-stroke-css',get_template_directory_uri() . '/theme_assets/css/vendor/pe-icon-7-stroke.css');
+    wp_enqueue_style('font-awesome-css',get_template_directory_uri() . '/theme_assets/css/vendor/font-awesome.min.css');
+    wp_enqueue_style('slick-css',get_template_directory_uri() . '/theme_assets/css/plugins/slick.min.css');
+    wp_enqueue_style('animate-css',get_template_directory_uri() . '/theme_assets/css/plugins/animate.css');
+    wp_enqueue_style('nice-select-css',get_template_directory_uri() . '/theme_assets/css/plugins/nice-select.css');
+    wp_enqueue_style('jqueryui-css',get_template_directory_uri() . '/theme_assets/css/plugins/jqueryui.min.css');
+    wp_enqueue_style( 'theme-styles', get_template_directory_uri() . '/theme_assets/css/style.css', array(), '1.0' );
     //custom
     wp_enqueue_style( 'default-styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0' );
     wp_enqueue_style( 'additional-styles', get_template_directory_uri() . '/assets/custom/css/custom.css', array(), '1.0' );
     wp_style_add_data( 'style', 'rtl', 'replace' );
   // js
-    wp_enqueue_script( 'modernizr-js',get_template_directory_uri() . '/theme/assets/js/vendor/modernizr-3.6.0.min.js',array(), _S_VERSION, true );
-    wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/theme/assets/js/vendor/jquery-3.6.0.min.js', array('jquery'), _S_VERSION, true );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/theme/assets/js/vendor/bootstrap.bundle.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/theme/assets/js/plugins/slick.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'countdown-js', get_template_directory_uri() . '/theme/assets/js/plugins/countdown.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'nice-select-js', get_template_directory_uri() . '/theme/assets/js/plugins/nice-select.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'jqueryui-js', get_template_directory_uri() . '/theme/assets/js/plugins/jqueryui.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'image-zoom-js', get_template_directory_uri() . '/theme/assets/js/plugins/image-zoom.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/theme/assets/js/plugins/imagesloaded.pkgd.min.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'ajaxchimp-js', get_template_directory_uri() . '/theme/assets/js/plugins/ajaxchimp.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'ajax-mail-js', get_template_directory_uri() . '/theme/assets/js/plugins/ajax-mail.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'google-map-js', get_template_directory_uri() . '/theme/assets/js/plugins/google-map.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'modernizr-js',get_template_directory_uri() . '/theme_assets/js/vendor/modernizr-3.6.0.min.js',array(), _S_VERSION, true );
+    wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/theme_assets/js/vendor/jquery-3.6.0.min.js', array('jquery'), _S_VERSION, true );
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/theme_assets/js/vendor/bootstrap.bundle.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/theme_assets/js/plugins/slick.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'countdown-js', get_template_directory_uri() . '/theme_assets/js/plugins/countdown.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'nice-select-js', get_template_directory_uri() . '/theme_assets/js/plugins/nice-select.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'jqueryui-js', get_template_directory_uri() . '/theme_assets/js/plugins/jqueryui.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'image-zoom-js', get_template_directory_uri() . '/theme_assets/js/plugins/image-zoom.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/theme_assets/js/plugins/imagesloaded.pkgd.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'ajaxchimp-js', get_template_directory_uri() . '/theme_assets/js/plugins/ajaxchimp.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'ajax-mail-js', get_template_directory_uri() . '/theme_assets/js/plugins/ajax-mail.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'google-map-js', get_template_directory_uri() . '/theme_assets/js/plugins/google-map.js', array(), _S_VERSION, true );
     // custom
     wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/assets/custom/js/custom.js', array(), _S_VERSION, true );
