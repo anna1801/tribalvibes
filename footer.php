@@ -292,6 +292,7 @@
             </div>
         </div>
     </div>
+    
 <?php wp_footer(); ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
 </body>
