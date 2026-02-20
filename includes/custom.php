@@ -164,4 +164,37 @@ function set_custom_password_after_checkout( $order_id ) {
         }
     }
 }
+
+// remove auto span wrapper in the checkout select field
+add_filter( 'woocommerce_form_field', 'remove_woocommerce_input_wrapper', 10, 4 );
+function remove_woocommerce_input_wrapper( $field, $key, $args, $value ) {
+    $field = preg_replace(
+        '/<span class="woocommerce-input-wrapper">(.*?)<\/span>/s',
+        '$1',
+        $field
+    );
+    return $field;
+}
+
+// auto update number of products in cart to the header shop icon
+add_filter( 'woocommerce_add_to_cart_fragments', 'update_cart_count_fragment' );
+function update_cart_count_fragment( $fragments ) {
+    ob_start();
+    ?>
+    <div class="header-sec notification">
+        <?php echo WC()->cart->get_cart_contents_count(); ?>
+    </div>
+    <?php
+    $fragments['.header-sec.notification'] = ob_get_clean();
+    return $fragments;
+}
+
+// minicart ajax
+add_filter( 'woocommerce_add_to_cart_fragments', 'custom_minicart_fragment' );
+function custom_minicart_fragment( $fragments ) {
+    ob_start();
+    get_template_part('includes/ajax/minicart');
+    $fragments['.woocommerce-minicart-fragments'] = ob_get_clean();
+    return $fragments;
+}
 ?>

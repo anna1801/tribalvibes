@@ -71,7 +71,7 @@
                                         <li>
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
-                                                <div class="notification">2</div>
+                                                <div class="header-sec notification"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
                                             </a>
                                         </li>
                                     </ul>

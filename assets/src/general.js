@@ -44,20 +44,3 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', updateTotal);
     });
 });
-
-// open select field in billing fileds
-jQuery(document).ready(function($) {
-    $('.single-input-item .nice-select').on('click', function(e) {
-        e.stopPropagation();
-        var $this = $(this);
-        if ($this.hasClass('open')) {
-            $this.removeClass('open');
-        } else {
-            $('.nice-select').removeClass('open');
-            $this.addClass('open');
-        }
-    });
-    $(document).on('click', function() {
-        $('.nice-select').removeClass('open');
-    });
-});

@@ -229,8 +229,15 @@
             </div>
         </div>
     </div>
-    <!-- Quick view modal end -->
-    <!-- offcanvas mini cart start -->
+    <!-- to do 5 end -->
+
+
+
+
+
+
+
+
     <div class="offcanvas-minicart-wrapper">
         <div class="minicart-inner">
             <div class="offcanvas-overlay"></div>
@@ -238,77 +245,53 @@
                 <div class="minicart-close">
                     <i class="pe-7s-close"></i>
                 </div>
-                <div class="minicart-content-box">
-                    <div class="minicart-item-wrapper">
-                        <ul>
-                            <li class="minicart-item">
-                                <div class="minicart-thumb">
-                                    <a href="product-details.html">
-                                        <img src="assets/img/cart/cart-1.jpg" alt="product">
-                                    </a>
-                                </div>
-                                <div class="minicart-content">
-                                    <h3 class="product-name">
-                                        <a href="product-details.html">Dozen White Botanical Linen Dinner Napkins</a>
-                                    </h3>
-                                    <p>
-                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                        <span class="cart-price"><i class="fa fa-inr"></i> 100.00</span>
-                                    </p>
-                                </div>
-                                <button class="minicart-remove"><i class="pe-7s-close"></i></button>
-                            </li>
-                            <li class="minicart-item">
-                                <div class="minicart-thumb">
-                                    <a href="product-details.html">
-                                        <img src="assets/img/cart/cart-2.jpg" alt="product">
-                                    </a>
-                                </div>
-                                <div class="minicart-content">
-                                    <h3 class="product-name">
-                                        <a href="product-details.html">Dozen White Botanical Linen Dinner Napkins</a>
-                                    </h3>
-                                    <p>
-                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
-                                        <span class="cart-price"><i class="fa fa-inr"></i> 80.00</span>
-                                    </p>
-                                </div>
-                                <button class="minicart-remove"><i class="pe-7s-close"></i></button>
-                            </li>
-                        </ul>
+                <?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
+                    <div class="minicart-content-box">
+                        <?php get_template_part('includes/ajax/minicart');  ?>
+                        <div class="minicart-pricing-box">
+                            <ul>
+                                <li>
+                                    <span>sub-total</span>
+                                    <span>
+                                        <strong><?php echo WC()->cart->get_cart_subtotal(); ?></strong>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>Shipping</span>
+                                    <span>
+                                        <strong>
+                                            <?php 
+                                                $shipping_total = WC()->cart->get_shipping_total();
+                                                echo wc_price( $shipping_total );
+                                            ?>
+                                        </strong>
+                                    </span>
+                                </li>
+                                <li class="total">
+                                    <span>total</span>
+                                    <span>
+                                        <strong><?php echo WC()->cart->get_total(); ?></strong>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <?php
+                            $cart_url     = wc_get_cart_url();
+                            $checkout_url = wc_get_checkout_url();
+                        ?>
+                        <div class="minicart-button">
+                            <a href="<?php echo $cart_url; ?>"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                            <a href="<?php echo $checkout_url; ?>"><i class="fa fa-share"></i> Checkout</a>
+                        </div>
                     </div>
-                    <div class="minicart-pricing-box">
-                        <ul>
-                            <li>
-                                <span>sub-total</span>
-                                <span><strong><i class="fa fa-inr"></i> 300.00</strong></span>
-                            </li>
-                            <li>
-                                <span>Eco Tax (-2.00)</span>
-                                <span><strong><i class="fa fa-inr"></i> 10.00</strong></span>
-                            </li>
-                            <li>
-                                <span>VAT (20%)</span>
-                                <span><strong><i class="fa fa-inr"></i> 60.00</strong></span>
-                            </li>
-                            <li class="total">
-                                <span>total</span>
-                                <span><strong><i class="fa fa-inr"></i> 370.00</strong></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="minicart-button">
-                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
-                        <a href="checkout.html"><i class="fa fa-share"></i> Checkout</a>
-                    </div>
-                </div>
+                <?php else : ?>
+                    <li class="minicart-item empty">
+                        <p><?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?></p>
+                    </li>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-    <!-- offcanvas mini cart end -->
-    <!-- to do 5 end -->
-
-
 <?php wp_footer(); ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
 </body>

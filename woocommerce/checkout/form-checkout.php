@@ -254,8 +254,16 @@ get_template_part('template/breadcrumb');
                                 <div class="summary-footer-area">
                                     <div class="custom-control custom-checkbox mb-20">
                                         <input type="checkbox" class="custom-control-input" id="terms" required />
+                                        <?php
+                                            $terms_link = get_permalink( wc_get_page_id( 'terms' ) );
+                                            if($terms_link) {
+                                                $the_link = $terms_link;
+                                            } else {
+                                                $the_link = site_url() . '/terms-conditions';
+                                            }
+                                        ?>
                                         <label class="custom-control-label" for="terms">I have read and agree to
-                                            the website <a href="terms-conditions.html">terms and conditions.</a></label>
+                                            the website <a href="<?php echo $the_link; ?>">terms and conditions.</a></label>
                                     </div>
                                     <button type="submit" class="btn btn-sqr">Place Order</button>
                                 </div>

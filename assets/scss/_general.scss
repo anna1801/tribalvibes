@@ -273,3 +273,17 @@
         }
     }
 }
+.minicart-item {
+    .minicart-remove {
+        margin: auto;
+    }
+}
+.minicart-pricing-box {
+    li {
+        span {
+            .amount {
+                color: #5a5b2f;
+            }
+        }
+    }
+}

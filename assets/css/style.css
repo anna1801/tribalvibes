@@ -219,3 +219,11 @@
 .order-summary-details .order-summary-content .woocommerce-shipping-totals .woocommerce-shipping-destination {
   display: none;
 }
+
+.minicart-item .minicart-remove {
+  margin: auto;
+}
+
+.minicart-pricing-box li span .amount {
+  color: #5a5b2f;
+}
