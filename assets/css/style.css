@@ -254,12 +254,35 @@
   margin-bottom: 25px;
 }
 
-.policy-section .policy-list ul:not(:last-child),
+.policy-section .policy-list ul:not(:last-child), .policy-section .policy-list ul:not(:last-child),
+.policy-section .policy-list ol:not(:last-child),
 .policy-section .policy-list ol:not(:last-child) {
   margin-bottom: 25px;
 }
 
-.policy-section .policy-list ul:not(:last-child) li:not(:last-child),
-.policy-section .policy-list ol:not(:last-child) li:not(:last-child) {
+.policy-section .policy-list ul li ul,
+.policy-section .policy-list ul li ol,
+.policy-section .policy-list ol li ul,
+.policy-section .policy-list ol li ol {
+  margin-top: 10px;
+}
+
+.policy-section .policy-list ul li:not(:last-child),
+.policy-section .policy-list ol li:not(:last-child) {
   margin-bottom: 15px;
+}
+
+.testimonials-section .meta .avatar {
+  border-radius: 100%;
+  border: 0;
+  background: transparent;
+}
+
+.testimonials-section .meta .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
