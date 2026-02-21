@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="policy-list">
-                        <h3 class="policy-title"><?php the_title();?></h3>
+                        <h1 class="policy-title"><?php the_title();?></h1>
                         <?php the_content(); ?>
                     </div>
                 </div>

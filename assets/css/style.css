@@ -237,20 +237,29 @@
   margin-bottom: 10px;
 }
 
+.policy-section .policy-list h1:not(:first-child),
+.policy-section .policy-list h2:not(:first-child),
+.policy-section .policy-list h3:not(:first-child),
+.policy-section .policy-list h4:not(:first-child),
+.policy-section .policy-list h5:not(:first-child),
+.policy-section .policy-list h6:not(:first-child) {
+  padding-top: 15px;
+}
+
 .policy-section .policy-list p:not(:last-child) {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .policy-section .policy-list table:not(:last-child) {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .policy-section .policy-list ul:not(:last-child),
 .policy-section .policy-list ol:not(:last-child) {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .policy-section .policy-list ul:not(:last-child) li:not(:last-child),
 .policy-section .policy-list ol:not(:last-child) li:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
