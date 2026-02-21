@@ -52,9 +52,7 @@
                                 } elseif ( is_checkout() ) {
                                     echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
                                 } elseif ( is_page() ) {
-                                    echo 'This is a Single Page';
-                                } else {
-                                    echo 'Other Page Type';
+                                    echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
                                 }
                             ?>
                         </ul>

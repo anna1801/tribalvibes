@@ -227,3 +227,30 @@
 .minicart-pricing-box li span .amount {
   color: #5a5b2f;
 }
+
+.policy-section .policy-list h1,
+.policy-section .policy-list h2,
+.policy-section .policy-list h3,
+.policy-section .policy-list h4,
+.policy-section .policy-list h5,
+.policy-section .policy-list h6 {
+  margin-bottom: 10px;
+}
+
+.policy-section .policy-list p:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.policy-section .policy-list table:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.policy-section .policy-list ul:not(:last-child),
+.policy-section .policy-list ol:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.policy-section .policy-list ul:not(:last-child) li:not(:last-child),
+.policy-section .policy-list ol:not(:last-child) li:not(:last-child) {
+  margin-bottom: 20px;
+}

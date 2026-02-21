@@ -287,3 +287,28 @@
         }
     }
 }
+.policy-section {
+    .policy-list {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 10px;
+        }
+        p:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        table:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        ul:not(:last-child),
+        ol:not(:last-child) {
+            margin-bottom: 40px;
+            li:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
