@@ -30,6 +30,7 @@
             'post_status'    => 'publish',
             'orderby'        => 'date', 
             'order'          => 'DESC', 
+            'post__not_in'   => array( get_the_ID() ),
         );
         $posts = new WP_Query($args);
         if ($posts->have_posts()) : 
