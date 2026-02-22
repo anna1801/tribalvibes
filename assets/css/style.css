@@ -293,10 +293,14 @@
 
 .blog-post-item .blog-thumb img {
   aspect-ratio: 16 / 11.5;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recent-post .product-thumb img {
   aspect-ratio: 16 / 11.5;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blog-sidebar .blog-tags {

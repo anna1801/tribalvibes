@@ -350,6 +350,7 @@
     .blog-thumb {
         img {
             aspect-ratio: 16 / 11.5;
+            object-fit: cover;
         }
     }
 }
@@ -357,6 +358,7 @@
     .product-thumb {
         img {
             aspect-ratio: 16 / 11.5;
+            object-fit: cover;
         }
     }
 }

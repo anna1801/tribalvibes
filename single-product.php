@@ -196,7 +196,7 @@
                                             if ( has_post_thumbnail( get_the_ID() ) ) {
                                                 $share_img = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                                             } else {
-                                                $share_img = '';
+                                                $share_img = get_template_directory_uri().'/assets/images/placeholder.png';
                                             }
                                         ?>
                                         <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_link; ?>" target="_blank"><i class="fa fa-facebook"></i>like</a>
