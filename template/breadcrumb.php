@@ -7,12 +7,13 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>"><i class="fa fa-home"></i></a></li>
                             <?php
-                                if ( is_product_category() ) {
+                                if ( is_category() || is_product_category() ) {
                                     echo '<li class="breadcrumb-item" aria-current="page">Categories</li>';
                                     $current_term = get_queried_object();
-                                    if ($current_term && $current_term->taxonomy === 'product_cat') {
+                                    if ( $current_term && in_array( $current_term->taxonomy, array( 'category', 'product_cat' ) ) ) {
+                                        $taxonomy = $current_term->taxonomy;
                                         if ($current_term->parent) {
-                                            $parent_term = get_term($current_term->parent, 'product_cat');
+                                            $parent_term = get_term( $current_term->parent, $taxonomy );
                                             if (!is_wp_error($parent_term)) {
                                                 $parent_cat_name = $parent_term->name;
                                                 $parent_cat_link = get_term_link($parent_term);
@@ -47,12 +48,14 @@
                                         echo '<li class="breadcrumb-item"><a href="' . get_term_link( $main_term ) . '">' . esc_html( $main_term->name ) . '</a></li>';
                                         echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';                                        
                                     }
-                                } elseif ( is_cart() ) {
-                                    echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
-                                } elseif ( is_checkout() ) {
-                                    echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
                                 } elseif ( is_page() ) {
                                     echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
+                                } elseif ( is_month() ) {
+                                    echo '<li class="breadcrumb-item" aria-current="page">Blog Archive</li>';
+                                    echo '<li class="breadcrumb-item active" aria-current="page">'. single_month_title(' ', false).'</li>';
+                                } elseif ( is_tag() ) {
+                                    echo '<li class="breadcrumb-item" aria-current="page">Blog Tag</li>';
+                                    echo '<li class="breadcrumb-item active" aria-current="page">'. single_tag_title('', false).'</li>';
                                 }
                             ?>
                         </ul>

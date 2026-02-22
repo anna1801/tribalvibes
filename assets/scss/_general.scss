@@ -341,3 +341,29 @@
         }
     }
 }
+.blog-page-list {
+    .blog-post-item {
+        margin-bottom: 30px;
+    }
+}
+.blog-post-item {
+    .blog-thumb {
+        img {
+            aspect-ratio: 16 / 11.5;
+        }
+    }
+}
+.recent-post {
+    .product-thumb {
+        img {
+            aspect-ratio: 16 / 11.5;
+        }
+    }
+}
+.blog-sidebar {
+    .blog-tags {
+        column-gap: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

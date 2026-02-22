@@ -286,3 +286,25 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.blog-page-list .blog-post-item {
+  margin-bottom: 30px;
+}
+
+.blog-post-item .blog-thumb img {
+  aspect-ratio: 16 / 11.5;
+}
+
+.recent-post .product-thumb img {
+  aspect-ratio: 16 / 11.5;
+}
+
+.blog-sidebar .blog-tags {
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
