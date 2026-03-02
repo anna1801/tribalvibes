@@ -457,49 +457,54 @@
         
     <!-- latest blog area start -->
     <?php
-        $args = array(
-            'post_type'      => 'post',
-            'posts_per_page' => -1, 
-            'post_status'    => 'publish',
-            'orderby'        => 'date', 
-            'order'          => 'DESC', 
-        );
-        $latest_posts = new WP_Query($args);
-        if ($latest_posts->have_posts()) :
-        ?>
-        <section class="latest-blog-area section-padding pt-30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <?php
-                                $blog_title = get_field('blog_title');
-                                $blog_description = get_field('blog_description');
-                                if($blog_title) :
-                                    echo '<h2 class="title">'.$blog_title.'</h2>';
-                                endif;
-                                if($blog_description) :
-                                    echo '<p class="sub-title">'.$blog_description.'</p>';
-                                endif;
-                            ?>
+        $blog_show_hide = get_field('blog_show_hide');
+        if($blog_show_hide == true) :
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => -1, 
+                'post_status'    => 'publish',
+                'orderby'        => 'date', 
+                'order'          => 'DESC', 
+            );
+            $latest_posts = new WP_Query($args);
+            if ($latest_posts->have_posts()) :
+                ?>
+                <section class="latest-blog-area section-padding pt-30">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-title text-center">
+                                    <?php
+                                        $blog_title = get_field('blog_title');
+                                        $blog_description = get_field('blog_description');
+                                        if($blog_title) :
+                                            echo '<h2 class="title">'.$blog_title.'</h2>';
+                                        endif;
+                                        if($blog_description) :
+                                            echo '<p class="sub-title">'.$blog_description.'</p>';
+                                        endif;
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="blog-carousel-active slick-row-10 slick-arrow-style">
+                                    <?php
+                                        while ($latest_posts->have_posts()) : $latest_posts->the_post();
+                                            get_template_part('template/blog-list-layout');
+                                        endwhile;
+                                        wp_reset_postdata();
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="blog-carousel-active slick-row-10 slick-arrow-style">
-                            <?php
-                                while ($latest_posts->have_posts()) : $latest_posts->the_post();
-                                    get_template_part('template/blog-list-layout');
-                                endwhile;
-                                wp_reset_postdata();
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <?php endif; ?>
+                </section>
+                <?php 
+            endif;
+        endif; 
+    ?>
     <!-- latest blog area end -->
 
 <?php get_footer(); ?>
