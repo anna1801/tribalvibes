@@ -369,3 +369,54 @@
         flex-wrap: wrap;
     }
 }
+
+.woocommerce-account {
+    &.woocommerce-lost-password {
+        .woocommerce-message {
+            margin-bottom: 0;
+        }
+    }
+    .login-register-wrapper {
+        .woocommerce-privacy-policy-text {
+            display: none;
+        }
+        button {
+            float: none !important;
+            margin: 0 !important;
+        }
+        .form_redirect {
+            text-align: center;
+            .form_redirect_head {
+                position: relative;
+                text-align: center;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    z-index: 1;
+                    width: 100%;
+                    border-color: #d5d9d9;
+                    border-top-width: 1px;
+                    border-top-style: solid;
+                }
+                h6 {
+                    display: inline-block;
+                    position: relative;
+                    z-index: 2;
+                    background-color: #fff;
+                    padding: 0px 10px;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+            }
+            .account_btn {
+                cursor: pointer;
+                color: #1a4247;
+                &:hover {
+                    color: rgb(90, 91, 47);
+                }
+            }
+        }
+    }
+}

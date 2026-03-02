@@ -142,7 +142,14 @@
                                             }
                                         ?>
                                     </div>
-
+                                    <?php
+                                        $short_description = $product->get_short_description();
+                                        if ( ! empty( $short_description ) ) {
+                                            echo '<p class="pro-desc">';
+                                            echo wp_kses_post( $short_description );
+                                            echo '</p>';
+                                        }
+                                    ?>
                                     <form class="custom-ajax-add-to-cart" method="post">
                                         <?php 
                                             if ( $attributes ) :

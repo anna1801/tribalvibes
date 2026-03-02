@@ -44,3 +44,24 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', updateTotal);
     });
 });
+
+// My account Login/Register toggle
+jQuery(document).ready(function($){
+    var $accountWrapper = $('#custom_login_register');
+    if (!$accountWrapper.length) return;
+    var $breadcrumb = $('.breadcrumb-item.active');
+    $accountWrapper.find('#woo_register_form').hide();
+    $breadcrumb.text('Login');
+    $accountWrapper.on('click', '#create_account', function(e){
+        e.preventDefault();
+        $accountWrapper.find('#woo_login_form').hide();
+        $accountWrapper.find('#woo_register_form').fadeIn();
+        $breadcrumb.text('Register');
+    });
+    $accountWrapper.on('click', '#login_account', function(e){
+        e.preventDefault();
+        $accountWrapper.find('#woo_register_form').hide();
+        $accountWrapper.find('#woo_login_form').fadeIn();
+        $breadcrumb.text('Login');
+    });
+});

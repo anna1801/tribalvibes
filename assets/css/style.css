@@ -312,3 +312,56 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+.woocommerce-account.woocommerce-lost-password .woocommerce-message {
+  margin-bottom: 0;
+}
+
+.woocommerce-account .login-register-wrapper .woocommerce-privacy-policy-text {
+  display: none;
+}
+
+.woocommerce-account .login-register-wrapper button {
+  float: none !important;
+  margin: 0 !important;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect {
+  text-align: center;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect .form_redirect_head {
+  position: relative;
+  text-align: center;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect .form_redirect_head::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  border-color: #d5d9d9;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect .form_redirect_head h6 {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  padding: 0px 10px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect .account_btn {
+  cursor: pointer;
+  color: #1a4247;
+}
+
+.woocommerce-account .login-register-wrapper .form_redirect .account_btn:hover {
+  color: #5a5b2f;
+}

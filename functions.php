@@ -89,7 +89,8 @@ add_filter('wpcf7_autop_or_not', '__return_false');
     require get_template_directory() . '/template/product-list-layout.php';  
     require get_template_directory() . '/includes/ajax/product-list.php';
     require get_template_directory() . '/includes/ajax/add_to_cart.php';
-    require get_template_directory() . '/includes/ajax/blog-list.php';
+    require get_template_directory() . '/includes/ajax/blog-list.php'; 
+    require get_template_directory() . '/includes/ajax/login_register.php';
 // custom functions end
 
 // CPT

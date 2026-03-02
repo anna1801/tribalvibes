@@ -49,7 +49,18 @@
                                         echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';                                        
                                     }
                                 } elseif ( is_page() ) {
-                                    echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
+                                    if ( is_account_page() ) {
+                                        if ( is_wc_endpoint_url( 'lost-password' ) ) {
+                                            $text = 'Forgot Password';
+                                        } elseif ( is_wc_endpoint_url( 'edit-account' ) ) {
+                                            $text = 'My Account';
+                                        } else {
+                                            $text = 'Login';
+                                        }
+                                        echo '<li class="breadcrumb-item active" aria-current="page">'.$text.'</li>';
+                                    } else {
+                                        echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
+                                    }
                                 } elseif ( is_month() ) {
                                     echo '<li class="breadcrumb-item" aria-current="page">Blog Archive</li>';
                                     echo '<li class="breadcrumb-item active" aria-current="page">'. single_month_title(' ', false).'</li>';
