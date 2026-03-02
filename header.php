@@ -53,14 +53,9 @@
                                             </form>
                                         </li>
                                         <li class="user-hover">
-                                            <a href="#">
+                                            <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
                                                 <i class="pe-7s-user"></i>
                                             </a>
-                                            <ul class="dropdown-list">
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="register.html">register</a></li>
-                                                <li><a href="my-account.html">my account</a></li>
-                                            </ul>
                                         </li>
                                         <li>
                                             <a href="#">

@@ -303,6 +303,12 @@
      object-fit: cover;
 }
 
+.product-item .product-thumb img {
+  aspect-ratio: 3 / 4;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .blog-sidebar .blog-tags {
   -webkit-column-gap: 5px;
           column-gap: 5px;

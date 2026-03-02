@@ -362,6 +362,14 @@
         }
     }
 }
+.product-item {
+    .product-thumb {
+        img {
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+        }
+    }
+}
 .blog-sidebar {
     .blog-tags {
         column-gap: 5px;
