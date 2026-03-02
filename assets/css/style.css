@@ -379,3 +379,7 @@
 .woocommerce-account .login-register-wrapper .form_redirect .account_btn:hover {
   color: #5a5b2f;
 }
+
+body.page-template-template-about .testimonial-area {
+  margin-bottom: .5rem !important;
+}
