@@ -190,12 +190,12 @@
                                         </div>
                                     </form>
                                     <div class="custom-cart-message"></div> 
-                                    <!-- to do 
                                     <div class="useful-links">
-                                        <a href="compare.html" data-bs-toggle="tooltip" title="Compare"><i class="pe-7s-refresh-2"></i>compare</a>
-                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Wishlist"><i class="pe-7s-like"></i>wishlist</a>
+                                       <!-- to do  -->
+                                        <a href="compare.html" data-bs-toggle="tooltip" title="Compare"><i class="pe-7s-refresh-2"></i>compare</a> 
+                                        <!-- to do  end-->
+                                        <?php echo do_shortcode('[yith_wcwl_add_to_wishlist label="wishlist" ]'); ?>
                                     </div>
-                                    to do end -->
                                     <div class="like-icon">
                                         <?php
                                             $share_link = get_the_permalink();
@@ -422,6 +422,5 @@
             </div>
         </section>
     <?php endif; ?>
-    <!-- related products area end -->
 
 <?php get_footer(); ?>

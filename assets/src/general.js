@@ -65,3 +65,29 @@ jQuery(document).ready(function($){
         $breadcrumb.text('Login');
     });
 });
+
+// Tooltip for whishlist button
+jQuery(document).ready(function ($) {
+    function initWishlistTooltip() {
+        $('.yith-wcwl-add-to-wishlist-button').each(function () {
+            var $btn = $(this);
+            var isAdded = $btn.hasClass('yith-wcwl-add-to-wishlist-button--added');
+            var tooltipText = isAdded ? 'Added to Wishlist' : 'Wishlist';
+            $btn.attr({
+                'data-bs-toggle': 'tooltip',
+                'data-bs-placement': 'top',
+                'title': tooltipText
+            });
+            if ($btn.data('bs.tooltip')) {
+                $btn.data('bs.tooltip').dispose();
+            }
+            if (typeof bootstrap !== 'undefined') {
+                new bootstrap.Tooltip(this);
+            }
+        });
+    }
+    initWishlistTooltip();
+    $(document).on('yith_wcwl_init added_to_wishlist removed_from_wishlist', function () {
+        initWishlistTooltip();
+    });
+});

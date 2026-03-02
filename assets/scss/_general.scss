@@ -458,3 +458,22 @@ body.page-template-template-about {
         }
     }
 }
+.useful-links {
+    .yith-add-to-wishlist-button-block {
+        margin: 0;
+        .yith-wcwl-add-to-wishlist-button {
+            gap: 0;
+            .yith-wcwl-icon {
+                width: 25px;
+                max-width: 25px;
+                height: 20px;
+            }
+        }
+    }
+}
+.mobile-menu-toggler {
+    .mini-cart-wrap {
+        display: flex;
+        gap: 20px;
+    }
+}

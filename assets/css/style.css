@@ -411,3 +411,24 @@ body.page-template-template-about .testimonial-area {
 .contact-area .contact-info a:hover {
   color: #5a5b2f;
 }
+
+.useful-links .yith-add-to-wishlist-button-block {
+  margin: 0;
+}
+
+.useful-links .yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button {
+  gap: 0;
+}
+
+.useful-links .yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button .yith-wcwl-icon {
+  width: 25px;
+  max-width: 25px;
+  height: 20px;
+}
+
+.mobile-menu-toggler .mini-cart-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}

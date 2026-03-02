@@ -54,26 +54,20 @@
                                                 <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </li>
-
-
                                         <!-- to do end-->
+
+
                                         <li class="user-hover">
                                             <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
                                                 <i class="pe-7s-user"></i>
                                             </a>
                                         </li>
-
-
-                                        <!-- to do -->
                                         <li>
-                                            <a href="#">
+                                            <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
                                                 <i class="pe-7s-like"></i>
-                                                <div class="notification">0</div>
+                                                <div class="notification my-wishlist-count"><?php echo YITH_WCWL()->count_products(); ?></div> 
                                             </a>
                                         </li>
-                                        <!-- to do end-->
-
-
                                         <li>
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
@@ -125,6 +119,10 @@
                             </div>
                             <div class="mobile-menu-toggler">
                                 <div class="mini-cart-wrap">
+                                    <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
+                                        <i class="pe-7s-like"></i>
+                                        <div class="notification my-wishlist-count"><?php echo YITH_WCWL()->count_products(); ?></div> 
+                                    </a>
                                     <a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
                                         <i class="pe-7s-shopbag"></i>
                                         <div class="notification auto-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
