@@ -181,11 +181,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'update_cart_count_fragment' );
 function update_cart_count_fragment( $fragments ) {
     ob_start();
     ?>
-    <div class="header-sec notification">
+    <div class="auto-cart-count notification">
         <?php echo WC()->cart->get_cart_contents_count(); ?>
     </div>
     <?php
-    $fragments['.header-sec.notification'] = ob_get_clean();
+    $fragments['.auto-cart-count.notification'] = ob_get_clean();
     return $fragments;
 }
 

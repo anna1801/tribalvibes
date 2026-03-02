@@ -40,11 +40,13 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- to do 1-->
                         <div class="col-lg-4">
                             <div class="header-right d-flex align-items-center justify-content-end">
                                 <div class="header-configure-area">
                                     <ul class="nav justify-content-end">
+
+
+                                        <!-- to do -->
                                         <li class="header-search-container mr-0">
                                             <button class="search-trigger d-block"><i class="pe-7s-search"></i></button>
                                             <form class="header-search-box d-none">
@@ -52,28 +54,36 @@
                                                 <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </li>
+
+
+                                        <!-- to do end-->
                                         <li class="user-hover">
                                             <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
                                                 <i class="pe-7s-user"></i>
                                             </a>
                                         </li>
+
+
+                                        <!-- to do -->
                                         <li>
                                             <a href="#">
                                                 <i class="pe-7s-like"></i>
                                                 <div class="notification">0</div>
                                             </a>
                                         </li>
+                                        <!-- to do end-->
+
+
                                         <li>
                                             <a href="#" class="minicart-btn">
                                                 <i class="pe-7s-shopbag"></i>
-                                                <div class="header-sec notification"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
+                                                <div class="header-sec notification auto-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- to do 1 end -->
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -114,14 +124,12 @@
                                 </a>
                             </div>
                             <div class="mobile-menu-toggler">
-                                <!-- to do 2 -->
                                 <div class="mini-cart-wrap">
-                                    <a href="cart.html">
+                                    <a href="<?php echo esc_url( wc_get_cart_url() ); ?>">
                                         <i class="pe-7s-shopbag"></i>
-                                        <div class="notification">0</div>
+                                        <div class="notification auto-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
                                     </a>
                                 </div>
-                                 <!-- to do 2 end -->
                                 <button class="mobile-menu-btn">
                                     <span></span>
                                     <span></span>
@@ -142,12 +150,12 @@
                 </div>
                 <div class="off-canvas-inner">
                     <div class="search-box-offcanvas">
-                        <!-- to do 3 -->
+                        <!-- to do -->
                         <form>
                             <input type="text" placeholder="Search Here...">
                             <button class="search-btn"><i class="pe-7s-search"></i></button>
                         </form>
-                        <!-- to do 3 end -->
+                        <!-- to do end -->
                     </div>
                     <div class="mobile-navigation">
                         <nav>
@@ -161,25 +169,23 @@
                             ?>
                         </nav>
                     </div>
-                    <!-- to do 4 -->
                     <div class="mobile-settings">
                         <ul class="nav">
                             <li>
                                 <div class="dropdown mobile-top-dropdown">
-                                    <a href="#" class="dropdown-toggle" id="myaccount" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        My Account
-                                        <i class="fa fa-angle-down"></i>
+                                    <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>" class="dropdown-toggle" id="myaccount">
+                                        <?php
+                                            if ( is_user_logged_in() ) {
+                                                echo 'My Account <i class="pe-7s-user"></i>';
+                                            } else {
+                                                echo 'Hello, sign in <i class="pe-7s-right-arrow"></i>'; 
+                                            }
+                                        ?>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="myaccount">
-                                        <a class="dropdown-item text-capitalize" href="my-account.html">my account</a>
-                                        <a class="dropdown-item text-capitalize" href="login.html"> login</a>
-                                        <a class="dropdown-item text-capitalize" href="register.html">register</a>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <!-- to do 4 end -->
                     <div class="offcanvas-widget-area">
                         <div class="off-canvas-contact-widget">
                             <?php

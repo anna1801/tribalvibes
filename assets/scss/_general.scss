@@ -129,6 +129,13 @@
             tr {
                 td {
                     border: 1px solid #ccc;
+                    &.pro-quantity {
+                        .quantity {
+                           label.screen-reader-text {
+                            width: 0;
+                           }
+                        }
+                    }
                 }
             } 
         } 
@@ -284,6 +291,13 @@
             .amount {
                 color: #5a5b2f;
             }
+        }
+    }
+}
+.mobile-settings {
+    #myaccount {
+        i {
+            font-size: 25px;
         }
     }
 }

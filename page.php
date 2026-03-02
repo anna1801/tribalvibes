@@ -2,10 +2,10 @@
 /* WordPress default template for pages */ 
 ?>
 <?php get_header(); ?> 
-    <?php get_template_part('template/breadcrumb');  ?>
     <?php if ( is_cart() || is_checkout() || is_account_page() ) : ?>
         <?php the_content(); ?>
     <?php else :?>
+        <?php get_template_part('template/breadcrumb');  ?>
         <section class="policy-section section-padding">
             <div class="container">
                 <div class="row">
