@@ -447,3 +447,14 @@ body.page-template-template-about {
         margin-bottom: .5rem !important;
     }
 }
+.contact-area {
+    .contact-info {
+        a {
+            color: #1a4247;
+            margin-left: 5px;
+            &:hover {
+                color: #5a5b2f;
+            }
+        }
+    }
+}

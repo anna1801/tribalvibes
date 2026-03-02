@@ -1,0 +1,18 @@
+.wpcf7-form {
+    .wpcf7-submit {
+        background-color: #5a5b2f;
+        padding: 12px 25px;
+        width: auto;
+        border: 0;
+        &:hover {
+            color: #fff;
+            background-color: #1a4247;
+        }
+    }
+    .wpcf7-not-valid-tip {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        font-size: 13px;
+        text-align: left;
+    }
+}
