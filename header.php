@@ -44,19 +44,14 @@
                             <div class="header-right d-flex align-items-center justify-content-end">
                                 <div class="header-configure-area">
                                     <ul class="nav justify-content-end">
-
-
-                                        <!-- to do -->
                                         <li class="header-search-container mr-0">
                                             <button class="search-trigger d-block"><i class="pe-7s-search"></i></button>
-                                            <form class="header-search-box d-none">
-                                                <input type="text" placeholder="Search entire store hire" class="header-search-field">
-                                                <button class="header-search-btn"><i class="pe-7s-search"></i></button>
+                                            <form role="search" method="get" class="header-search-box d-none" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                                <input type="text" value="<?php echo get_search_query(); ?>" name="s" placeholder="Search entire store here" class="header-search-field">
+                                                <input type="hidden" name="post_type" value="product">
+                                                <button type="submit" class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </li>
-                                        <!-- to do end-->
-
-
                                         <li class="user-hover">
                                             <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
                                                 <i class="pe-7s-user"></i>

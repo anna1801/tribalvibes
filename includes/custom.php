@@ -237,4 +237,16 @@ add_action( 'woocommerce_created_customer', function( $customer_id ) {
 add_filter( 'woocommerce_min_password_strength', function() {
     return 0; 
 });
+
+// force search.php template
+add_filter('template_include', 'force_search_template', 99);
+function force_search_template($template) {
+    if (is_search()) {
+        $new_template = locate_template(array('search.php'));
+        if ($new_template) {
+            return $new_template; 
+        }
+    }
+    return $template;
+}
 ?>
