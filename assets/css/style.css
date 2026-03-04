@@ -330,10 +330,29 @@
      object-fit: cover;
 }
 
-.product-item .product-thumb img {
+.product-thumb img {
   aspect-ratio: 3 / 4;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.product-thumb .button-group .label {
+  display: none;
+}
+
+.product-thumb .button-group .fa.fa-check-circle {
+  position: relative;
+  top: -2px;
+}
+
+.product-thumb .button-group .yith-wcwl-add-to-wishlist-button .yith-wcwl-add-to-wishlist-button__label {
+  display: none;
+}
+
+.product-thumb .button-group .yith-wcwl-add-to-wishlist-button svg {
+  width: 18px;
+  height: 18px;
+  margin-top: -5px;
 }
 
 .blog-sidebar .blog-tags {

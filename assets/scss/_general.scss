@@ -376,11 +376,28 @@
         }
     }
 }
-.product-item {
-    .product-thumb {
-        img {
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
+.product-thumb {
+    img {
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+    }
+    .button-group {
+        .label {
+            display: none;
+        }
+        .fa.fa-check-circle {
+            position: relative;
+            top: -2px;
+        }
+        .yith-wcwl-add-to-wishlist-button {
+            .yith-wcwl-add-to-wishlist-button__label{
+                display: none;
+            }
+            svg {
+                width: 18px;
+                height: 18px;
+                margin-top: -5px;
+            }
         }
     }
 }

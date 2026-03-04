@@ -20,7 +20,7 @@ jQuery(document).on('click', '.custom-compare-btn', function(e){
         success: function(response){
             if(response.success && response.data.added){
                 button.addClass('added');
-                button.html('<i class="fa fa-check-circle" aria-hidden="true"></i> Product added!');
+                button.html('<i class="fa fa-check-circle" aria-hidden="true"></i> <span class="label">Product added!</span>');
                 button.attr('data-bs-original-title', 'Added to Compare')
                       .tooltip('dispose')
                       .tooltip();

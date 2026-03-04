@@ -47,14 +47,27 @@
                             }
                         } 
                     ?>
-                </div>
-                <!-- to do 
+                </div>            
                 <div class="button-group">
-                    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="pe-7s-like"></i></a>
-                    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" data-bs-placement="left" title="Quick View"><i class="pe-7s-search"></i></span></a>
+                    <?php echo do_shortcode('[yith_wcwl_add_to_wishlist label="wishlist" ]'); ?>
+                    <?php
+                        $added = false;
+                        if (isset($_SESSION['compare']) && in_array(get_the_ID(), $_SESSION['compare'])) :
+                            $added = true;
+                        endif;
+                        if ($added) {
+                            $text = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
+                            $tooltip = 'Added to Compare';
+                        } else {
+                            $text = '<i class="pe-7s-refresh-2"></i>';
+                            $tooltip = 'Compare';
+                        }
+                    ?>
+                    <a href="#" class="custom-compare-btn <?php echo $added ? 'added' : ''; ?>" data-product-id="<?php echo get_the_ID(); ?>" data-bs-placement="left" data-bs-toggle="tooltip" title="<?php echo $tooltip; ?>"> <?php echo $text; ?> </a> 
+                    <!-- to do
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view" data-product-id="<?php echo get_the_ID(); ?>"><span data-bs-toggle="tooltip" data-bs-placement="left" title="Quick View"><i class="pe-7s-search"></i></span></a> 
+                    to do end-->
                 </div>
-                to do end -->
                 <div class="cart-hover">
                     <a href="<?php echo esc_url($product->add_to_cart_url()); ?>"
                     data-quantity="1"

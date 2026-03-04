@@ -69,7 +69,7 @@ jQuery(document).ready(function($){
 // Tooltip for whishlist button
 jQuery(document).ready(function ($) {
     function initWishlistTooltip() {
-        $('.yith-wcwl-add-to-wishlist-button').each(function () {
+        $('.useful-links .yith-wcwl-add-to-wishlist-button').each(function () {
             var $btn = $(this);
             var isAdded = $btn.hasClass('yith-wcwl-add-to-wishlist-button--added');
             var tooltipText = isAdded ? 'Added to Wishlist' : 'Wishlist';
