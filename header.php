@@ -52,19 +52,40 @@
                                                 <button type="submit" class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </li>
+                                        <?php
+                                            if ( is_user_logged_in() ) {
+                                                $acc = 'My Account';
+                                            } else {
+                                                $acc = 'Login Now';
+                                            }
+                                        ?>
                                         <li class="user-hover">
-                                            <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
+                                            <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>" data-bs-toggle="tooltip" title="<?php echo $acc; ?>">
                                                 <i class="pe-7s-user"></i>
                                             </a>
                                         </li>
+                                        <?php
+                                            $compare_count = get_compare_count();
+                                            if($compare_count == 0) {
+                                                $co_count = 0;
+                                            } else {
+                                                $co_count = $compare_count;
+                                            }
+                                        ?>
+                                        <li class="compare">
+                                            <a href="<?php echo site_url(); ?>/compare" data-bs-toggle="tooltip" title="Compare">
+                                                <i class="pe-7s-refresh-2"></i>
+                                                <div class="notification my-compare-count"><?php echo $co_count; ?></div> 
+                                            </a>
+                                        </li>
                                         <li>
-                                            <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
+                                            <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>" data-bs-toggle="tooltip" title="Wishlist">
                                                 <i class="pe-7s-like"></i>
                                                 <div class="notification my-wishlist-count"><?php echo YITH_WCWL()->count_products(); ?></div> 
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="minicart-btn">
+                                            <a href="#" class="minicart-btn" data-bs-toggle="tooltip" title="Mini Cart">
                                                 <i class="pe-7s-shopbag"></i>
                                                 <div class="header-sec notification auto-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
                                             </a>

@@ -486,3 +486,22 @@ body.page-template-template-about {
         }
     }
 }
+.yith-wcwl-add-to-wishlist-button--added {
+    &:hover {
+        svg {
+            color: #5a5b2f !important;
+        }
+    }
+}
+.compare-page-content-wrap {
+    .compare-table {
+        table {
+            .add_to_cart_button {
+                min-width: 128px;
+            }
+            .added_to_cart.wc-forward {
+                display: none;
+            }
+        }
+    }
+}

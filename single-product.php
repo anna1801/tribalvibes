@@ -191,9 +191,20 @@
                                     </form>
                                     <div class="custom-cart-message"></div> 
                                     <div class="useful-links">
-                                       <!-- to do  -->
-                                        <a href="compare.html" data-bs-toggle="tooltip" title="Compare"><i class="pe-7s-refresh-2"></i>compare</a> 
-                                        <!-- to do  end-->
+                                        <?php
+                                            $added = false;
+                                            if (isset($_SESSION['compare']) && in_array(get_the_ID(), $_SESSION['compare'])) :
+                                                $added = true;
+                                            endif;
+                                            if ($added) {
+                                                $text = '<i class="fa fa-check-circle" aria-hidden="true"></i> Compare';
+                                                $tooltip = 'Added to Compare';
+                                            } else {
+                                                $text = '<i class="pe-7s-refresh-2"></i> Compare';
+                                                $tooltip = 'Compare';
+                                            }
+                                        ?>
+                                        <a href="#" class="custom-compare-btn <?php echo $added ? 'added' : ''; ?>" data-product-id="<?php echo get_the_ID(); ?>" data-bs-toggle="tooltip" title="<?php echo $tooltip; ?>"> <?php echo $text; ?> </a> 
                                         <?php echo do_shortcode('[yith_wcwl_add_to_wishlist label="wishlist" ]'); ?>
                                     </div>
                                     <div class="like-icon">
@@ -209,13 +220,9 @@
                                         <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_link; ?>" target="_blank"><i class="fa fa-facebook"></i>like</a>
                                         <a class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $share_title; ?>&url=<?php echo $share_link; ?>" target="_blank"><i class="fa fa-twitter"></i>tweet</a>
                                         <a class="pinterest" href="https://pinterest.com/pin/create/button/?url=<?php echo $share_link; ?>&media=<?php echo $share_img; ?>&description=<?php echo $share_title; ?>"><i class="fa fa-pinterest"></i>save</a>
-                                        <!-- <a class="google" href=""><i class="fa fa-google-plus"></i>share</a> -->
-                                        <!-- <a class="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $share_link; ?>"><i class="fa fa-linkedin"></i>share</a> -->
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
 

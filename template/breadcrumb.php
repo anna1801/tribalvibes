@@ -49,6 +49,13 @@
                                         echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';                                        
                                     }
                                 } elseif ( is_page() ) {
+                                    global $post;
+                                    if ( $post->post_parent ) :
+                                        $parent_id = $post->post_parent;
+                                        $parent_title = get_the_title( $parent_id );
+                                        $parent_url   = get_permalink( $parent_id );
+                                        echo '<li class="breadcrumb-item"><a href="' . esc_url($parent_url) . '">'.esc_html($parent_title).'</a></li>';
+                                    endif;
                                     if ( is_account_page() ) {
                                         if ( is_wc_endpoint_url( 'lost-password' ) ) {
                                             $text = 'Forgot Password';
