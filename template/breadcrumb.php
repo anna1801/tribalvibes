@@ -77,6 +77,9 @@
                                 } elseif ( is_single() && get_post_type() === 'post' ) {
                                     echo '<li class="breadcrumb-item" aria-current="page"><a href="'.site_url().'/blog/">Blog</a></li>';
                                     echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
+                                } elseif ( is_shop() ) { 
+                                    $title = woocommerce_page_title(false);
+                                    echo '<li class="breadcrumb-item active" aria-current="page">'. $title .'</li>';
                                 }
                             ?>
                         </ul>
