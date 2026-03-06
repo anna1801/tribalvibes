@@ -88,6 +88,8 @@ add_filter('wpcf7_autop_or_not', '__return_false');
     require get_template_directory() . '/template/product-grid-layout.php';
     require get_template_directory() . '/template/product-list-layout.php';  
     require get_template_directory() . '/template/compare-table.php';
+    require get_template_directory() . '/template/product-details.php'; 
+    require get_template_directory() . '/template/order-received.php';
 // custom functions end
 
 // Ajax

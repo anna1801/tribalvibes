@@ -471,3 +471,46 @@ body.page-template-template-about .testimonial-area {
 .compare-page-content-wrap .compare-table table .added_to_cart.wc-forward {
   display: none;
 }
+
+.thankyou-page .woocommerce-thankyou-order-received {
+  color: green;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.thankyou-page .woocommerce-order-details table {
+  border-radius: 0px;
+}
+
+.thankyou-page .woocommerce-order-details table thead th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.thankyou-page .woocommerce-order-details table tfoot th {
+  padding: 20px;
+}
+
+.thankyou-page .woocommerce-order-details table tbody td {
+  padding: 10px 20px;
+  border: 0;
+}
+
+.thankyou-page .woocommerce-order-details table tbody td a {
+  color: #5a5b2f;
+}
+
+.thankyou-page .woocommerce-order-details .woocommerce-order-details__title {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.thankyou-page .woocommerce-customer-details .woocommerce-column__title {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.thankyou-page .woocommerce-customer-details address {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}

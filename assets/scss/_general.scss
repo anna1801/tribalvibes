@@ -522,3 +522,49 @@ body.page-template-template-about {
         }
     }
 }
+.thankyou-page {
+    .woocommerce-thankyou-order-received {
+        color: green;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .woocommerce-order-details {
+        table {
+            border-radius: 0px;
+            thead {
+                th {
+                    border-bottom: 1px solid rgba(0, 0, 0, .1);
+                    padding: 20px;
+                }
+            }
+            tfoot {
+                th {
+                    padding: 20px;
+                }
+            }
+            tbody {
+                td {
+                    padding: 10px 20px;
+                    border: 0;
+                    a {
+                        color: rgb(90, 91, 47);
+                    }
+                }
+            }
+        }
+        .woocommerce-order-details__title {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+    }
+    .woocommerce-customer-details {
+        .woocommerce-column__title {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        address {
+            border: 1px solid rgba(0, 0, 0, .1);
+            border-radius: 0px;
+        }
+    }
+}
