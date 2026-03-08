@@ -514,3 +514,135 @@ body.page-template-template-about .testimonial-area {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0px;
 }
+
+.tab-content label .required {
+  color: red;
+}
+
+.tab-content .addresses .title .edit {
+  float: left;
+}
+
+.tab-content a:not(.btn) {
+  font-weight: 500;
+  color: #5a5b2f;
+}
+
+.tab-content .myaccount-table .btn {
+  float: right;
+}
+
+.tab-content .woocommerce-order-details h2,
+.tab-content .woocommerce-customer-details h2 {
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  color: #1a4247;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.tab-content .woocommerce-order-details address,
+.tab-content .woocommerce-customer-details address {
+  border-radius: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-content .woocommerce-order-details .shop_table,
+.tab-content .woocommerce-customer-details .shop_table {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+.tab-content .woocommerce-order-details .shop_table,
+.tab-content .woocommerce-customer-details .shop_table {
+  border-radius: 0px;
+}
+
+.tab-content .woocommerce-order-details .shop_table thead th,
+.tab-content .woocommerce-customer-details .shop_table thead th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.tab-content .woocommerce-order-details .shop_table tfoot th,
+.tab-content .woocommerce-customer-details .shop_table tfoot th {
+  padding: 20px;
+}
+
+.tab-content .woocommerce-order-details .shop_table tbody td,
+.tab-content .woocommerce-customer-details .shop_table tbody td {
+  padding: 10px 20px;
+  border: 0;
+}
+
+.tab-content .woocommerce-order-details .shop_table tbody td a,
+.tab-content .woocommerce-customer-details .shop_table tbody td a {
+  color: #5a5b2f;
+}
+
+.woocommerce .woocommerce-info {
+  border-top-color: #5a5b2f;
+  border-radius: 5px 5px 0 0;
+}
+
+.woocommerce .woocommerce-info .container::before {
+  color: #5a5b2f;
+}
+
+.woocommerce form .form-row {
+  margin-top: 20px;
+}
+
+.woocommerce form .form-row label {
+  color: #1a4247;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.woocommerce form .form-row label .required {
+  color: red;
+}
+
+.woocommerce form .form-row .input-text,
+.woocommerce form .form-row textarea {
+  color: #1a4247;
+  border: 1px solid #dadada;
+  padding: 12px 10px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 0px;
+  background: #f7f7f7;
+}
+
+.woocommerce form .form-row .input-text:active, .woocommerce form .form-row .input-text:focus,
+.woocommerce form .form-row textarea:active,
+.woocommerce form .form-row textarea:focus {
+  border-color: #5a5b2f;
+  background-color: #fff;
+}
+
+.woocommerce form .form-row .nice-select {
+  width: 100%;
+  border-radius: 0;
+  height: 48px;
+  border-color: #ccc;
+  background-color: #f7f7f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woocommerce form .form-row .nice-select .current {
+  color: #1a4247;
+}
+
+.woocommerce form .form-row .nice-select .list {
+  max-height: 200px;
+  overflow: auto;
+  width: 100%;
+}

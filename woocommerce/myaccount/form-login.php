@@ -1,5 +1,7 @@
 <?php
 
+get_template_part('template/breadcrumb');
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }

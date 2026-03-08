@@ -1,4 +1,6 @@
 <?php
+get_template_part('template/breadcrumb');
+
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_lost_password_form' );

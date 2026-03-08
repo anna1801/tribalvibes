@@ -249,4 +249,45 @@ function force_search_template($template) {
     }
     return $template;
 }
+
+// Customize my account navigation
+remove_action( 'woocommerce_account_navigation', 'woocommerce_account_navigation', 10 );
+add_action('woocommerce_account_navigation', function() {
+    $current_endpoint = WC()->query->get_current_endpoint(); 
+    $items = wc_get_account_menu_items();
+    $icons = [
+        'dashboard'       => 'fa-dashboard',
+        'orders'          => 'fa-cart-arrow-down',
+        'downloads'       => 'fa-cloud-download',
+        'payment-methods'  => 'fa-credit-card',
+        'edit-address'    => 'fa-map-marker',
+        'edit-account'    => 'fa-user',
+        'customer-logout' => 'fa-sign-out',
+    ];
+    echo '<div class="myaccount-tab-menu nav" role="tablist">';
+    foreach ( $items as $endpoint => $label ) {
+        $classes = wc_get_account_menu_item_classes( $endpoint );
+        if (!is_array($classes)) {
+            $classes = [$classes];
+        }
+        $active_class = ($current_endpoint === $endpoint) ? 'active' : '';
+        $href = ($endpoint === 'customer-logout') ? wc_logout_url() : wc_get_account_endpoint_url($endpoint);
+        $icon_html = isset($icons[$endpoint]) ? '<i class="fa ' . esc_attr($icons[$endpoint]) . '"></i> ' : '';
+        echo '<a href="' . esc_url($href) . '" class="' . esc_attr($active_class) . '">' . $icon_html . esc_html($label) . '</a>';
+    }
+    echo '</div>';
+}, 10);
+
+// Add Payment Methods tab manually
+add_filter( 'woocommerce_account_menu_items', function( $items ) {
+    $new_items = [];
+    foreach ( $items as $key => $label ) {
+        $new_items[ $key ] = $label;
+        if ( $key === 'downloads' ) { 
+            $new_items['payment-methods'] = __('Payment Methods', 'woocommerce');
+        }
+    }
+    return $new_items;
+});
+
 ?>

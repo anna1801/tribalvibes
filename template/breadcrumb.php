@@ -64,7 +64,11 @@
                                         } else {
                                             $text = 'Login';
                                         }
-                                        echo '<li class="breadcrumb-item active" aria-current="page">'.$text.'</li>';
+                                        if ( is_user_logged_in() ) {
+                                            echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
+                                        } else {
+                                            echo '<li class="breadcrumb-item active" aria-current="page">'.$text.'</li>';
+                                        }
                                     } else {
                                         echo '<li class="breadcrumb-item active" aria-current="page">'. get_the_title().'</li>';
                                     }

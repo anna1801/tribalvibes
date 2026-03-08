@@ -91,3 +91,15 @@ jQuery(document).ready(function ($) {
         initWishlistTooltip();
     });
 });
+
+// My account - redirect edit address form 
+jQuery(document).ready(function($){
+    if($('#address-edit').length){
+        if(window.location.href.indexOf("edit-address") !== -1){
+            $('.myaccount-tab-menu a').removeClass('active');
+            $('.tab-content .tab-pane').removeClass('show active');
+            $('a[href="#address-edit"]').addClass('active');
+            $('#address-edit').addClass('show active');
+        }
+    }
+});
