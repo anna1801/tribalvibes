@@ -221,6 +221,14 @@ get_template_part('template/breadcrumb');
                                                 wc_cart_totals_shipping_html();
                                             endif;
                                         ?>
+                                        <?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+                                            <?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+                                                <tr>
+                                                    <td><?php echo esc_html( $tax->label ); ?></td>
+                                                    <td><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         <tr>
                                             <td>Total Amount</td>
                                             <td><strong><?php echo WC()->cart->get_total(); ?></strong></td>

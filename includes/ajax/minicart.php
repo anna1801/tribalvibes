@@ -53,17 +53,27 @@
                             <strong><?php echo WC()->cart->get_cart_subtotal(); ?></strong>
                         </span>
                     </li>
-                    <li>
-                        <span>Shipping</span>
-                        <span>
-                            <strong>
-                                <?php 
-                                    $shipping_total = WC()->cart->get_shipping_total();
-                                    echo wc_price( $shipping_total );
-                                ?>
-                            </strong>
-                        </span>
-                    </li>
+                    <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+                        <li>
+                            <span>Shipping</span>
+                            <span>
+                                <strong>
+                                    <?php 
+                                        $shipping_total = WC()->cart->get_shipping_total();
+                                        echo wc_price( $shipping_total );
+                                    ?>
+                                </strong>
+                            </span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+                        <?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+                            <li>
+                            <span><?php echo esc_html( $tax->label ); ?></span>
+                            <span><strong><?php echo wp_kses_post( $tax->formatted_amount ); ?></strong></span>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                     <li class="total">
                         <span>total</span>
                         <span>

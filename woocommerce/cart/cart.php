@@ -158,6 +158,14 @@ do_action( 'woocommerce_before_cart' );
                                                     <?php wc_cart_totals_shipping_html(); ?>
                                                     <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
                                                 <?php endif; ?>
+                                                <?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+                                                    <?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+                                                        <tr>
+                                                            <td><?php echo esc_html( $tax->label ); ?></td>
+                                                            <td><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
                                                 <tr class="order-total total">
                                                     <td><?php esc_html_e( 'Total', 'woocommerce' ); ?></td>
                                                     <td class="total-amount">
