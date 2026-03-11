@@ -125,10 +125,7 @@
         </div>
     </footer>
 
-
-
-    <!-- to do 5 -->
-    <!-- Quick view modal start -->
+    <!-- to do 5 
     <div class="modal" id="quick_view">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -136,7 +133,6 @@
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <!-- product details inner end -->
                     <div class="product-details-inner">
                         <div class="row">
                             <div class="col-lg-5">
@@ -224,19 +220,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- product details inner end -->
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
-    <!-- to do 5 end -->
-
-
-
-
-
-
-
+    to do 5 end -->
 
     <div class="offcanvas-minicart-wrapper">
         <div class="minicart-inner">
@@ -245,50 +234,7 @@
                 <div class="minicart-close">
                     <i class="pe-7s-close"></i>
                 </div>
-                <?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
-                    <div class="minicart-content-box">
-                        <?php get_template_part('includes/ajax/minicart');  ?>
-                        <div class="minicart-pricing-box">
-                            <ul>
-                                <li>
-                                    <span>sub-total</span>
-                                    <span>
-                                        <strong><?php echo WC()->cart->get_cart_subtotal(); ?></strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span>Shipping</span>
-                                    <span>
-                                        <strong>
-                                            <?php 
-                                                $shipping_total = WC()->cart->get_shipping_total();
-                                                echo wc_price( $shipping_total );
-                                            ?>
-                                        </strong>
-                                    </span>
-                                </li>
-                                <li class="total">
-                                    <span>total</span>
-                                    <span>
-                                        <strong><?php echo WC()->cart->get_total(); ?></strong>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                        <?php
-                            $cart_url     = wc_get_cart_url();
-                            $checkout_url = wc_get_checkout_url();
-                        ?>
-                        <div class="minicart-button">
-                            <a href="<?php echo $cart_url; ?>"><i class="fa fa-shopping-cart"></i> View Cart</a>
-                            <a href="<?php echo $checkout_url; ?>"><i class="fa fa-share"></i> Checkout</a>
-                        </div>
-                    </div>
-                <?php else : ?>
-                    <li class="minicart-item empty">
-                        <p><?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?></p>
-                    </li>
-                <?php endif; ?>
+                <?php get_template_part('includes/ajax/minicart');  ?>
             </div>
         </div>
     </div>
