@@ -290,4 +290,8 @@ add_filter( 'woocommerce_account_menu_items', function( $items ) {
     return $new_items;
 });
 
+// Ajax add to cart support
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_script( 'wc-cart-fragments' );
+});
 ?>

@@ -170,7 +170,7 @@
                                 </div>
                             </div>
                             <div class="action_link">
-                                <button type="submit" name="add-to-cart" value="<?php echo $product->get_id(); ?>" class="btn btn-cart2 add_to_cart_button ajax_add_to_cart">
+                                <button type="submit" name="add-to-cart" value="<?php echo $product->get_id(); ?>" class="single_add_to_cart_button btn btn-cart2 add_to_cart_button ajax_add_to_cart">
                                     Add to cart
                                 </button>
                             </div>
