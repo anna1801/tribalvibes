@@ -90,7 +90,7 @@ get_template_part('template/breadcrumb');
                                     foreach ( $checkout->get_checkout_fields( 'billing' ) as $key => $field ) :
                                         $col_class = in_array( $key, ['billing_first_name', 'billing_last_name'] ) ? 'col-md-6' : 'col-12';
                                     ?>
-                                    <div class="<?php echo esc_attr( $col_class ); ?>">
+                                    <div class="form-row <?php echo esc_attr( $col_class ); ?>">
                                         <div class="single-input-item">
                                             <?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
                                         </div>
