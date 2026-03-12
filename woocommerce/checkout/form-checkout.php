@@ -126,7 +126,7 @@ get_template_part('template/breadcrumb');
                             <div class="checkout-box-wrap">
                                 <div class="single-input-item">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="ship_to_different" name="ship_to_different" />
+                                        <input type="checkbox" class="custom-control-input" id="ship_to_different" name="ship_to_different_address" />
                                         <label class="custom-control-label" for="ship_to_different">Ship to a different address?</label>
                                     </div>
                                 </div>
