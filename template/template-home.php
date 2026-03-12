@@ -257,7 +257,16 @@
                                                         <span class="price-regular"> <i class="fa fa-inr"></i> <?php echo $sale_price; ?></span>
                                                         <span class="price-old"><del> <i class="fa fa-inr"></i> <?php echo $regular_price; ?></del></span>
                                                     </div>
-                                                    <div class="product-countdown product-countdown--style-two" data-countdown="<?php echo $date_sale_end; ?>"></div>                                                
+                                                    <?php 
+                                                        if ( $sale_end ) {
+                                                            $sale_end_timestamp = $sale_end->getTimestamp();
+                                                            $current_timestamp  = current_time( 'timestamp' );
+                                                            if ( $sale_end_timestamp > $current_timestamp ) {
+                                                                $date_sale_end = $sale_end->date('Y-m-d H:i:s'); 
+                                                                echo '<div class="product-countdown product-countdown--style-two" data-countdown="'.$date_sale_end.'"></div>';                                                                               
+                                                            }
+                                                        }
+                                                    ?>  
                                                 </div>
                                             </div>
                                             <?php 

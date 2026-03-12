@@ -278,6 +278,16 @@
                 display: none;
             }
         }
+        .order-summary-table {
+            table {
+                tr {
+                    td {
+                        max-width: 100px;
+                        white-space: normal;
+                    }
+                } 
+            } 
+        } 
     }
 }
 .minicart-item {
@@ -641,9 +651,13 @@ body.page-template-template-about {
             color: #5a5b2f;
         }
     }
+    .woocommerce-error {
+        a {
+            color: #5a5b2f;
+        }
+    }
     form {
         .form-row {
-            margin-top: 20px;
             label {
                 color: #1a4247;
                 text-transform: capitalize;

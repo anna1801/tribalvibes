@@ -200,6 +200,9 @@ function custom_minicart_fragment( $fragments ) {
 
 // Validate custom registration fields (full name and Phone number)
 add_action( 'woocommerce_register_post', function( $username, $email, $validation_errors ) {
+    if ( isset($_POST['createaccount']) ) {
+        return; // Skip validation if account created from checkout
+    }
     if ( empty( $_POST['full_name'] ) || empty( trim( $_POST['full_name'] ) ) ) {
         $validation_errors->add( 'full_name_error', 'Please enter your full name.' );
     }
