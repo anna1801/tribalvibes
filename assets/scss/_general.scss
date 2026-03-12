@@ -411,6 +411,13 @@
         }
     }
 }
+.button-group {
+    .yith-wcwl-add-to-wishlist-button {
+        &.yith-wcwl-add-to-wishlist-button--added {
+            pointer-events: none;
+        }
+    }
+}
 .blog-sidebar {
     .blog-tags {
         column-gap: 5px;

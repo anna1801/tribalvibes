@@ -360,6 +360,10 @@
   margin-top: -5px;
 }
 
+.button-group .yith-wcwl-add-to-wishlist-button.yith-wcwl-add-to-wishlist-button--added {
+  pointer-events: none;
+}
+
 .blog-sidebar .blog-tags {
   -webkit-column-gap: 5px;
           column-gap: 5px;
