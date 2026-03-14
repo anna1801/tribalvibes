@@ -364,6 +364,16 @@
   pointer-events: none;
 }
 
+.related-products .button-group .yith-wcwl-add-to-wishlist-button {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.related-products .button-group .yith-wcwl-add-to-wishlist-button svg {
+  margin-top: 0 !important;
+}
+
 .blog-sidebar .blog-tags {
   -webkit-column-gap: 5px;
           column-gap: 5px;

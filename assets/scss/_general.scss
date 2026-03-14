@@ -418,6 +418,16 @@
         }
     }
 }
+.related-products {
+    .button-group {
+        .yith-wcwl-add-to-wishlist-button {
+            justify-content: center !important;
+            svg {
+                margin-top: 0 !important;
+            }
+        }
+    }    
+}
 .blog-sidebar {
     .blog-tags {
         column-gap: 5px;
@@ -425,7 +435,6 @@
         flex-wrap: wrap;
     }
 }
-
 .woocommerce-account {
     &.woocommerce-lost-password {
         .woocommerce-message {
