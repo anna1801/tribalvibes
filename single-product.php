@@ -9,6 +9,8 @@
             $product = wc_get_product( get_the_ID() );
         }
 
+        $attributes = $product->get_attributes();
+
         get_template_part('template/breadcrumb'); 
     ?>
 
@@ -33,11 +35,16 @@
                                         <li>
                                             <a data-bs-toggle="tab" href="#tab_two">information</a>
                                         </li>
-                                        <!-- to do
                                         <li>
-                                            <a data-bs-toggle="tab" href="#tab_three">reviews (1)</a>
+                                            <a data-bs-toggle="tab" href="#tab_three">reviews 
+                                                <?php 
+                                                    $review_count = $product->get_review_count(); 
+                                                    if($review_count) :
+                                                        echo '('.$review_count.')';
+                                                    endif;
+                                                ?>
+                                            </a>
                                         </li>
-                                        to do end -->
                                     </ul>
                                     <div class="tab-content reviews-tab">
                                         <?php
@@ -85,57 +92,69 @@
                                                 }
                                             echo '</div>';
                                         ?>
-                                        <!-- to do 
+                                  
+                                        <!-- tab 3 -->
                                         <div class="tab-pane fade" id="tab_three">
-                                            <form action="#" class="review-form">
-                                                <h5>1 review for <span>Client Name</span></h5>
-                                                <div class="total-reviews">
-                                                    <div class="rev-avatar">
-                                                        <img src="assets/img/about/avatar.jpg" alt="">
-                                                    </div>
-                                                    <div class="review-box">
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                        </div>
-                                                        <div class="post-author">
-                                                            <p><span>Username -</span> 30 Dec, 2025</p>
-                                                        </div>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col">
-                                                        <label class="col-form-label"><span class="text-danger">*</span>
-                                                            Your Name</label>
-                                                        <input type="text" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col">
-                                                        <label class="col-form-label"><span class="text-danger">*</span>
-                                                            Your Email</label>
-                                                        <input type="email" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col">
-                                                        <label class="col-form-label"><span class="text-danger">*</span>
-                                                            Your Review</label>
-                                                        <textarea class="form-control" required></textarea>
-                                                        <div class="help-block pt-10"><span class="text-danger">Note:</span>
-                                                            HTML is not translated!
+                                            <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" class="review-form">
+                                                <?php
+                                                $comments = get_comments(array(
+                                                    'post_id' => $product->get_id(),
+                                                    'status'  => 'approve'
+                                                ));
+                                                ?>
+                                                <h5><?php echo count($comments); ?> review for <span><?php the_title(); ?></span></h5>
+                                                <?php foreach ($comments as $comment) :
+                                                $rating = intval(get_comment_meta($comment->comment_ID, 'rating', true));
+                                                ?>
+                                                    <div class="total-reviews">
+                                                        <div class="rev-avatar"><?php echo get_avatar($comment,60); ?></div>
+                                                        <div class="review-box">
+                                                            <div class="ratings">
+                                                                <?php
+                                                                    for ($i=1;$i<=5;$i++){
+                                                                        if($i <= $rating){
+                                                                            echo '<span class="good"><i class="fa fa-star"></i></span>';
+                                                                        } else{
+                                                                            echo '<span><i class="fa fa-star"></i></span>';
+                                                                        }
+                                                                    }
+                                                                ?>
+                                                            </div>
+                                                            <div class="post-author">
+                                                                <p>
+                                                                    <span><?php echo $comment->comment_author; ?> -</span>
+                                                                    <?php echo get_comment_date('d M, Y',$comment); ?>
+                                                                </p>
+                                                            </div>
+                                                            <p><?php echo $comment->comment_content; ?></p>
                                                         </div>
                                                     </div>
+                                                <?php endforeach; ?>
+                                                <div class="form-group row">
+                                                    <div class="col">
+                                                        <label class="col-form-label"><span class="text-danger">*</span> Your Name</label>
+                                                        <input type="text" name="author" class="form-control" required>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col">
-                                                        <label class="col-form-label"><span class="text-danger">*</span>
-                                                            Rating</label>
-                                                        &nbsp;&nbsp;&nbsp; Bad&nbsp;
+                                                        <label class="col-form-label"><span class="text-danger">*</span> Your Email</label>
+                                                        <input type="email" name="email" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col">
+                                                        <label class="col-form-label"><span class="text-danger">*</span> Your Review</label>
+                                                        <textarea name="comment" class="form-control" required></textarea>
+                                                        <div class="help-block pt-10">
+                                                            <span class="text-danger">Note:</span> HTML is not translated!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col">
+                                                        <label class="col-form-label"> <span class="text-danger">*</span> Rating </label>
+                                                        &nbsp;&nbsp;&nbsp; Bad
                                                         <input type="radio" value="1" name="rating">
                                                         &nbsp;
                                                         <input type="radio" value="2" name="rating">
@@ -151,16 +170,16 @@
                                                 <div class="buttons">
                                                     <button class="btn btn-sqr" type="submit">Continue</button>
                                                 </div>
-                                            </form> 
+                                                <input type="hidden" name="comment_post_ID" value="<?php echo $product->get_id(); ?>">
+                                                <input type="hidden" name="comment_parent" value="0">
+                                                <?php comment_id_fields(); ?>
+                                            </form>
                                         </div>
-                                        to do end-->
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -655,3 +655,8 @@ body.page-template-template-about .testimonial-area {
   overflow: auto;
   width: 100%;
 }
+
+.total-reviews .review-box .ratings span:not(.good) {
+  color: #1b4247;
+  opacity: 0.15;
+}

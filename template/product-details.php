@@ -66,18 +66,25 @@
 
                     <h3 class="product-name"><?php echo $title; ?></h3>
 
-                    <!-- to do 
+                    <?php
+                        $average = $product->get_average_rating();
+                        $review_count = $product->get_review_count();
+                    ?>
                     <div class="ratings d-flex">
-                        <span><i class="fa fa-star-o"></i></span>
-                        <span><i class="fa fa-star-o"></i></span>
-                        <span><i class="fa fa-star-o"></i></span>
-                        <span><i class="fa fa-star-o"></i></span>
-                        <span><i class="fa fa-star-o"></i></span>
+                        <?php
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= floor($average)) {
+                                    echo '<span><i class="fa fa-star"></i></span>'; 
+                                } else {
+                                    echo '<span><i class="fa fa-star-o"></i></span>'; 
+                                }
+
+                            }
+                        ?>
                         <div class="pro-review">
-                            <span>1 Reviews</span>
+                            <span><?php echo $review_count; ?> Reviews</span>
                         </div>
                     </div>
-                    to do end-->
 
                     <div class="price-box">
                         <?php

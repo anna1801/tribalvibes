@@ -709,3 +709,15 @@ body.page-template-template-about {
         }
     }
 }
+.total-reviews {
+    .review-box {
+        .ratings {
+            span {
+                &:not(.good) {
+                    color: #1b4247;
+                    opacity: 0.15;
+                }
+            }
+        }
+    }
+}
