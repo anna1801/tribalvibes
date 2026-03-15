@@ -6,7 +6,11 @@ function custom_compare_page() {
     }
 
     if (empty($_SESSION['compare'])) {
-        return '<h3 class="text-center">No products added to compare.</h3>';
+        return '<div class="compare-page-wrapper section-padding">
+                    <div class="container"><div class="section-bg-color"><div class="row"><div class="col-lg-12">
+                        <h3 class="text-center">No products added to compare.</h3>
+                    </div></div></div></div>
+                </div>';
     }
 
     $product_ids = $_SESSION['compare'];
@@ -20,6 +24,13 @@ function custom_compare_page() {
     }
 
     ob_start();
+
+    if ( function_exists('wc_print_notices') ) {
+        echo '<div class="woocommerce-notices-wrapper">';
+        wc_print_notices();
+        echo '</div>';
+    }
+
     ?>
 
     <div class="compare-page-wrapper section-padding">

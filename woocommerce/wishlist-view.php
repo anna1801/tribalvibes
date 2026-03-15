@@ -3,19 +3,20 @@ defined( 'ABSPATH' ) || exit;
 
 $wishlist_items = $wishlist->get_items();
 ?>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th class="pro-thumbnail">Thumbnail</th>
-            <th class="pro-title">Product</th>
-            <th class="pro-price">Price</th>
-            <th class="pro-quantity">Stock Status</th>
-            <th class="pro-subtotal">Add to Cart</th>
-            <th class="pro-remove">Remove</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if ( $wishlist_items ) : ?>
+
+<?php if ( $wishlist_items ) : ?>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="pro-thumbnail">Thumbnail</th>
+                <th class="pro-title">Product</th>
+                <th class="pro-price">Price</th>
+                <th class="pro-quantity">Stock Status</th>
+                <th class="pro-subtotal">Add to Cart</th>
+                <th class="pro-remove">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
             <?php foreach ( $wishlist_items as $item ) :
                 $product = wc_get_product( $item['product_id'] );
                 if ( ! $product ) {
@@ -57,10 +58,8 @@ $wishlist_items = $wishlist->get_items();
                     </td>
                 </tr>
             <?php endforeach; ?>
-        <?php else : ?>
-            <tr>
-                <td colspan="6">Your wishlist is empty.</td>
-            </tr>
-        <?php endif; ?>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+<?php else : ?>
+    <h3 class="text-center">Your wishlist is empty.</h3>
+<?php endif; ?>

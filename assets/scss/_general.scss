@@ -666,11 +666,6 @@ body.page-template-template-about {
             color: #5a5b2f;
         }
     }
-    .woocommerce-error {
-        a {
-            color: #5a5b2f;
-        }
-    }
     form {
         .form-row {
             label {
@@ -732,5 +727,11 @@ body.page-template-template-about {
 .woocommerce-wishlist {
     .wishlist-title-container {
         display: none;
+    }
+}
+.woocommerce-error,
+.woocommerce-message {
+    a {
+        color: #5a5b2f;
     }
 }
