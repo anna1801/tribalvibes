@@ -164,12 +164,11 @@
                 </div>
                 <div class="off-canvas-inner">
                     <div class="search-box-offcanvas">
-                        <!-- to do -->
                         <form>
-                            <input type="text" placeholder="Search Here...">
-                            <button class="search-btn"><i class="pe-7s-search"></i></button>
+                            <input type="text" value="<?php echo get_search_query(); ?>" name="s" placeholder="Search Here...">
+                            <input type="hidden" name="post_type" value="product">
+                            <button type="submit" class="search-btn"><i class="pe-7s-search"></i></button>
                         </form>
-                        <!-- to do end -->
                     </div>
                     <div class="mobile-navigation">
                         <nav>
