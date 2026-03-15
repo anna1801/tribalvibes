@@ -536,15 +536,14 @@ body.page-template-template-about {
         }
     }
 }
-.compare-page-content-wrap {
-    .compare-table {
-        table {
-            .add_to_cart_button {
-                min-width: 128px;
-            }
-            .added_to_cart.wc-forward {
-                display: none;
-            }
+.compare-page-content-wrap,
+.wishlist-main-wrapper {
+    table {
+        .add_to_cart_button {
+            min-width: 128px;
+        }
+        .added_to_cart.wc-forward {
+            display: none;
         }
     }
 }
@@ -728,5 +727,10 @@ body.page-template-template-about {
                 }
             }
         }
+    }
+}
+.woocommerce-wishlist {
+    .wishlist-title-container {
+        display: none;
     }
 }

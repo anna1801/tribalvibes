@@ -483,11 +483,13 @@ body.page-template-template-about .testimonial-area {
   color: #5a5b2f !important;
 }
 
-.compare-page-content-wrap .compare-table table .add_to_cart_button {
+.compare-page-content-wrap table .add_to_cart_button,
+.wishlist-main-wrapper table .add_to_cart_button {
   min-width: 128px;
 }
 
-.compare-page-content-wrap .compare-table table .added_to_cart.wc-forward {
+.compare-page-content-wrap table .added_to_cart.wc-forward,
+.wishlist-main-wrapper table .added_to_cart.wc-forward {
   display: none;
 }
 
@@ -669,4 +671,8 @@ body.page-template-template-about .testimonial-area {
 .total-reviews .review-box .ratings span:not(.good) {
   color: #1b4247;
   opacity: 0.15;
+}
+
+.woocommerce-wishlist .wishlist-title-container {
+  display: none;
 }
