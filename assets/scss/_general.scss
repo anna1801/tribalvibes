@@ -735,3 +735,31 @@ body.page-template-template-about {
         color: #5a5b2f;
     }
 }
+.hero-slider-area {
+    .slider-item {
+        .slider-thumb {
+            img {
+                object-fit: cover;
+                @media (min-width: 992px) {
+                    min-height: 612px;
+                    max-height: 612px;
+                }
+                @media (max-width: 991px) {
+                    min-height: 580px;
+                    max-height: 580px;
+                }
+            }
+        }
+    }
+}
+.product-banner-carousel {
+    .banner-slide-item {
+        .banner-statistics {
+            img {
+                object-fit: cover;
+                min-height: 485px;
+                max-height: 485px;
+            }
+        }
+    }
+}
